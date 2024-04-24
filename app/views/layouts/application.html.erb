@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GaugeSquare</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>YourAppName</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="user-icon">
+      <img src="path_to_your_user_icon.jpg" alt="User Icon">
+    </div>
+    <div class="navigation-icons">
+      <a href="/path1"><img src="path_to_icon1.jpg" alt="Nav 1"></a>
+      <a href="/path2"><img src="path_to_icon2.jpg" alt="Nav 2"></a>
+      <a href="/path3"><img src="path_to_icon3.jpg" alt="Nav 3"></a>
+      <a href="/path4"><img src="path_to_icon4.jpg" alt="Nav 4"></a>
+    </div>
+  </div>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= yield %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
 </html>
