@@ -7,7 +7,7 @@
     padding: 20px; /* 内側の余白 */
   }
   
-  .user-icon img {
+  .app-icon img {
     width: 100%; /* アイコンのサイズ調整 */
     border-radius: 50%; /* アイコンを円形に */
     margin-bottom: 20px; /* 下の要素との間隔 */

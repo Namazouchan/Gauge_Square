@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YourAppName</title>
+  <title>Gauge Square</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
   <div class="sidebar">
-    <div class="user-icon">
-      <img src="path_to_your_user_icon.jpg" alt="User Icon">
+    <div class="app-icon">
+      <img src="path_to_your_user_icon.jpg" alt="App Icon">
     </div>
     <div class="navigation-icons">
       <a href="/path1"><img src="path_to_icon1.jpg" alt="Nav 1"></a>
@@ -21,6 +21,6 @@
 
   <%= yield %>
 
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
 </body>
 </html>
