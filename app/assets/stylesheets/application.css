@@ -1,3 +1,31 @@
+.sidebar {
+  width: 100px; /* サイドバーの幅 */
+  position: fixed; /* 画面をスクロールしても固定 */
+  height: 100%; /* 画面全体の高さ */
+  background-color: #ADADAD; /* サイドバーの背景色 */
+  color: white; /* テキスト色 */
+  padding: 20px; /* 内側の余白 */
+  border-radius: 10px;
+}
+
+.app-icon img {
+  width: 100%; /* アイコンのサイズ調整 */
+  border-radius: 50%; /* アイコンを円形に */
+  margin-bottom: 50px; /* 下の要素との間隔 */
+}
+
+.navigation-icons a {
+  display: block; /* ブロック要素として表示 */
+  margin-bottom: 45px; /* アイコン間の間隔 */
+  text-align: center; /* 中央寄せ */
+}
+
+.navigation-icons img {
+  width: 50px; /* ナビゲーションアイコンのサイズ */
+  height: auto; /* アスペクト比を保持 */
+}
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
