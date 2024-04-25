@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#home'
+  get 'home', to: 'pages#home'
   get 'complete', to: 'pages#complete'
   get 'feedback', to: 'pages#feedback'
   get 'goalset', to: 'pages#goalset'
