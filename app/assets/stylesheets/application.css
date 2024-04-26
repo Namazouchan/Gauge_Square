@@ -25,6 +25,11 @@
   height: auto; /* アスペクト比を保持 */
 }
 
+.main-content {
+  margin-left: 140px; /* サイドバーの幅 + 内側の余白 (100px + 40px) */
+  padding: 20px; /* コンテンツエリアの余白 */
+}
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
