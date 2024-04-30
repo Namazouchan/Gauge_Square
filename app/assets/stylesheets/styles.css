@@ -1,33 +1,34 @@
-.container {
+.goal-setting-container {
   width: 90%;
   margin: auto;
 }
 
-.scrollable-table {
-  overflow-x: scroll;
+.long-term-goal-entry {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-table {
+.mid-term-goal-entry {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.long-term-goal-entry textarea,
+.mid-term-goal-entry textarea,
+.mid-term-goal-entry select,
+.mid-term-goal-entry input[type="date"] {
   width: 100%;
-  border-collapse: collapse;
+  margin-top: 5px;
+  border-radius: 5px;
 }
 
-table, th, td {
-  border: 1px solid black;
-}
-
-th, td {
-  padding: 8px;
-  text-align: left;
-}
-
-textarea {
-  width: 300px;
-  height: 100px;
-}
-
-input[type="date"] {
+.mid-term-goal-entry button {
   margin-top: 10px;
+  margin-right: 5px;
 }
 
 .goalbutton {

@@ -1,26 +1,17 @@
-function addTextArea(divId) {
-  const container = document.getElementById(divId);
-  const newTextArea = document.createElement('textarea');
-  newTextArea.name = divId.includes('long') ? "long_term_goals[]" : "mid_term_goals[]";
-  container.appendChild(newTextArea);
-  if (divId === 'mid-term-goals') {
-    const newDateInput = document.createElement('input');
-    newDateInput.type = 'date';
-    newDateInput.name = 'mid_term_dates[]';
-    container.appendChild(newDateInput);
-  }
+function addMidTermGoalEntry() {
+  const container = document.getElementById("mid-term-goal-area");
+  const newGoalEntry = container.firstElementChild.cloneNode(true);
+  newGoalEntry.querySelectorAll('textarea, select, input[type="date"]').forEach(input => {
+    input.value = '';
+  });
+  container.appendChild(newGoalEntry);
 }
 
-function removeTextArea(divId) {
-  const container = document.getElementById(divId);
-  let elements = container.getElementsByTagName('textarea');
-  if (elements.length > 1) { // 確実に一つは残す
-    elements[elements.length - 1].remove();
-    if (divId === 'mid-term-goals') {
-      let dateElements = container.getElementsByTagName('input');
-      if (dateElements.length > 1) {
-        dateElements[dateElements.length - 1].remove();
-      }
-    }
+function removeMidTermGoalEntry(button) {
+  const entry = button.parentNode;
+  if (entry.parentNode.childElementCount > 1) {
+    entry.parentNode.removeChild(entry);
+  } else {
+    alert('少なくとも一つの入力エリアは必要です。');
   }
 }
