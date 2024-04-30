@@ -2,14 +2,16 @@
   width: 100px; /* サイドバーの幅 */
   position: fixed; /* 画面をスクロールしても固定 */
   height: 100%; /* 画面全体の高さ */
-  background-color: #ADADAD; /* サイドバーの背景色 */
+  background-color: #F5F5F5; /* サイドバーの背景色 */
+  border: 1px solid #ADADAD;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
   color: white; /* テキスト色 */
   padding: 20px; /* 内側の余白 */
   border-radius: 10px;
 }
 
 .app-icon img {
-  width: 100%; /* アイコンのサイズ調整 */
+  width: 90%; /* アイコンのサイズ調整 */
   border-radius: 50%; /* アイコンを円形に */
   margin-bottom: 50px; /* 下の要素との間隔 */
 }
@@ -25,19 +27,19 @@
   height: auto; /* アスペクト比を保持 */
 }
 
+.main-content {
+  margin-left: 160px; /* サイドバーの幅 + 内側の余白 (100px + 60px) */
+  padding: 20px; /* コンテンツエリアの余白 */
+  background-color: #F5F5F5; /* メインコンテンツの背景色 */
+  border: 1px solid #ADADAD; /* 境界線の色と太さ */
+  border-radius: 10px; /* 枠の角を丸くする */
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* 影をつける (オプショナル) */
+  width: calc(100% - 180px); /* 全体の幅からサイドバーの幅、余白、および増やしたマージンを引いた幅 */
+  height: auto; /* 高さは内容に応じて自動調整 */
+  position: relative; /* 相対的な位置 */
+  overflow: auto; /* 内容がはみ出た場合はスクロールバーを表示 */
+}
 
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  background-color: #DADADA
+}

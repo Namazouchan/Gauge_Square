@@ -1,0 +1,60 @@
+.goal-setting-container {
+  width: 90%;
+  margin: auto;
+}
+
+.long-term-goal-entry {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.mid-term-goal-entry {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.long-term-goal-entry textarea,
+.mid-term-goal-entry textarea,
+.mid-term-goal-entry select,
+.mid-term-goal-entry input[type="date"] {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.mid-term-goal-entry button {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.goalbutton {
+  background-color: #4CAF50; /* 緑色の背景 */
+  border: none;
+  color: white; /* 白色のテキスト */
+  padding: 15px 32px; /* 上下15px、左右32pxのパディング */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px; /* 角を丸くする */
+  transition: all 0.3s ease 0s; /* トランジション効果 */
+}
+
+.goalbutton:hover {
+  background-color: #45a049; /* ホバー時に少し暗い緑色に */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* 影をつける */
+  transform: scale(1.05); /* 少し大きくする */
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 垂直方向の中央揃え */
+  height: 20vh; /* 親要素の高さをビューポートの100%に設定 */
+}
