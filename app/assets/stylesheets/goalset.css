@@ -51,3 +51,10 @@
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* 影をつける */
   transform: scale(1.05); /* 少し大きくする */
 }
+
+.container {
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 垂直方向の中央揃え */
+  height: 20vh; /* 親要素の高さをビューポートの100%に設定 */
+}
