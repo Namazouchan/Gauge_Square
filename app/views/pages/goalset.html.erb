@@ -1,1 +1,47 @@
-<h1>goalset Page</h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>目標設定ページ</title>
+<%= stylesheet_link_tag 'styles' %>
+<%= javascript_include_tag 'script' %>
+</head>
+<body>
+  <div class="container">
+    <h2>長期的な目標</h2>
+    <div id="long-term-goals">
+      <textarea name="long_term_goals[]"></textarea>
+      <button onclick="addTextArea('long-term-goals')">+</button>
+      <button onclick="removeTextArea('long-term-goals')">-</button>
+    </div>
+
+    <h2>中期的な目標</h2>
+    <div id="mid-term-goals">
+      <textarea name="mid_term_goals[]"></textarea>
+      <button onclick="addTextArea('mid-term-goals')">+</button>
+      <button onclick="removeTextArea('mid-term-goals')">-</button>
+      <input type="date" name="mid_term_dates[]">
+    </div>
+
+    <div class="scrollable-table">
+      <table>
+        <thead>
+          <tr>
+            <th>何をするのか</th>
+            <th>なぜそれを行うのか</th>
+            <th>現状どうなのか</th>
+            <th>なぜそうなるのか</th>
+            <th>じゃあなにをするのか</th>
+            <th>優先順位</th>
+            <th>いつまでに行うのか</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- テーブルの内容は動的に追加されます -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button class="goalbutton">登録する</button>
+</body> 
+</html>

@@ -1,0 +1,52 @@
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.scrollable-table {
+  overflow-x: scroll;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+textarea {
+  width: 300px;
+  height: 100px;
+}
+
+input[type="date"] {
+  margin-top: 10px;
+}
+
+.goalbutton {
+  background-color: #4CAF50; /* 緑色の背景 */
+  border: none;
+  color: white; /* 白色のテキスト */
+  padding: 15px 32px; /* 上下15px、左右32pxのパディング */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px; /* 角を丸くする */
+  transition: all 0.3s ease 0s; /* トランジション効果 */
+}
+
+.goalbutton:hover {
+  background-color: #45a049; /* ホバー時に少し暗い緑色に */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* 影をつける */
+  transform: scale(1.05); /* 少し大きくする */
+}
