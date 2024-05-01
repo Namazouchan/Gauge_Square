@@ -1,2 +1,37 @@
-<h1>#home</h1>
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Main Page</title>
+<%= stylesheet_link_tag 'mainpage' %>
+</head>
+<body>
+    <div class="header">
+        <div class="welcome-box">
+            <h2>Welcome Back, <span class="username">ユーザー名</span></h2>
+            <p>今日も目標達成に向けて行動しましょう！</p>
+        </div>
+        <div class="user-box">
+            <img src="user_icon.png" alt="ユーザーアイコン" class="user-icon">
+            <p class="username">ユーザー名</p>
+            <button class="button">View Profile</button>
+            <button class="button">Edit Profile</button>
+        </div>
+    </div>
+    <div class="goals">
+        <div class="goal">
+            <h3>長期的目標</h3>
+            <p>目標詳細をここに表示</p>
+        </div>
+        <div class="goal">
+            <h3>中期的目標</h3>
+            <p>目標詳細をここに表示</p>
+        </div>
+    </div>
+    <div class="analytics">
+        <h3>Analytics</h3>
+        <!-- ここにグラフを埋め込むコードが必要です -->
+        <p>グラフ</p>
+    </div>
+</body>
+</html>
