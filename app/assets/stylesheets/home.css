@@ -1,0 +1,111 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5F5;
+}
+
+.top-contents {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  padding-left: 80px;
+}
+
+.welcome-box {
+  background-color: #05505A;
+  border: 2px solid #ccc;
+  padding: 10px;
+  padding-left: 80px;
+  border-radius: 30px;
+  height: 250px;
+  width: 800px;
+  color: #ccc;
+  border: 1px solid #ADADAD;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.user-box {
+background-color: #FFFFFF;
+border: 2px solid #ccc;
+padding: 10px;
+border-radius: 15px;
+width: 350px;
+margin: 0 auto;
+text-align: center;
+border: 1px solid #ADADAD;
+box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.user-icon {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.top-username {
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 40px;
+}
+
+.icon-username {
+  font-weight: bold;
+}
+
+.button {
+  background-color: #4CAF50; /* 緑色の背景 */
+  border: none;
+  color: white; /* 白色のテキスト */
+  padding: 10px 22px; /* 上下15px、左右32pxのパディング */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px; /* 角を丸くする */
+  transition: all 0.3s ease 0s; /* トランジション効果 */
+}
+
+.button:hover {
+  background-color: #45a049; /* ホバー時に少し暗い緑色に */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* 影をつける */
+}
+
+.goals {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.goal1 {
+  color: white;
+  border: 1px solid #ADADAD;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  background-color: #FF8C8C;
+}
+
+.goal2 {
+  color: white;
+  border: 1px solid #ADADAD;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  background-color: #00D0C4;
+}
+
+.analytics {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+}

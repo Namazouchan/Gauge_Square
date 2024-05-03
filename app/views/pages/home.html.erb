@@ -3,27 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Main Page</title>
-<%= stylesheet_link_tag 'mainpage' %>
+<%= stylesheet_link_tag 'home' %>
 </head>
 <body>
-    <div class="header">
+    <div class="top-contents">
         <div class="welcome-box">
-            <h2>Welcome Back, <span class="username">ユーザー名</span></h2>
+            <h2>Welcome Back</h2>
+            <p class="top-username">ユーザー名</p>
             <p>今日も目標達成に向けて行動しましょう！</p>
         </div>
         <div class="user-box">
-            <img src="user_icon.png" alt="ユーザーアイコン" class="user-icon">
-            <p class="username">ユーザー名</p>
+            <%= link_to(image_tag('usericon.png', alt: 'usericon', class: 'user-icon')) %>
+            <p class="icon-username">ユーザー名</p>
             <button class="button">View Profile</button>
             <button class="button">Edit Profile</button>
         </div>
     </div>
     <div class="goals">
-        <div class="goal">
+        <div class="goal1">
             <h3>長期的目標</h3>
             <p>目標詳細をここに表示</p>
         </div>
-        <div class="goal">
+        <div class="goal2">
             <h3>中期的目標</h3>
             <p>目標詳細をここに表示</p>
         </div>
