@@ -7,10 +7,10 @@ Goals - 各ユーザーの目標を保持するテーブル
 Feedbacks - 目標に対するフィードバックを保持するテーブル  
 
 ## テーブル詳細
-Users テーブル
+
 ```mermaid
 ---
-title: "タイトル"
+title: "Gauge_Square"
 ---
 erDiagram
     USERS ||--o{ GOALS : "has"
