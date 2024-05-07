@@ -32,7 +32,6 @@ Feedbacks - 目標に対するフィードバックを保持するテーブル
 |-----------------|-----------|-----------------|---------------------|
 | `id`            | integer   | Primary Key     | ユーザーID          |
 | `name`          | string    | Not Null        | ユーザーの名前       |
-| `email`         | string    | Not Null, Unique| ユーザーのメールアドレス |
 | `password_hash` | string    | Not Null        | ハッシュ化されたパスワード |
 | `created_at`    | datetime  | Not Null        | 作成日時            |
 | `updated_at`    | datetime  | Not Null        | 更新日時            |
