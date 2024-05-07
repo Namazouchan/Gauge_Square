@@ -8,3 +8,40 @@ Feedbacks - 目標に対するフィードバックを保持するテーブル
 
 ## テーブル詳細
 Users テーブル
+```mermaid
+---
+title: "タイトル"
+---
+erDiagram
+    USERS ||--o{ GOALS : "has"
+    GOALS ||--o{ FEEDBACKS : "has"
+    USERS ||--o{ FEEDBACKS : "provides"
+
+    USERS {
+      integer id
+      string name
+      string email
+      string password_hash
+      datetime created_at
+      datetime updated_at
+    }
+
+    GOALS {
+      integer id
+      integer user_id
+      string title
+      text description
+      integer priority
+      datetime deadline
+      datetime created_at
+      datetime updated_at
+    }
+
+    FEEDBACKS {
+      integer id
+      integer goal_id
+      integer user_id
+      text content
+      datetime created_at
+      datetime updated_at
+    }
