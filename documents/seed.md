@@ -1,89 +1,86 @@
-
-## シードデータ例
-以下は、ユーザーと目標のサンプルデータを生成するシードデータの例です。これを db/seeds.rb に記述して実行することで、データベースにサンプルデータが追加される。
 # db/seeds.rb
 
 # ユーザー作成
 user1 = User.create!(
-  name: "Jane Smith",
-  email: "jane@example.com",
+  name: "田中太郎",
+  email: "tanaka@example.com",
   password: "password"
 )
 
 user2 = User.create!(
-  name: "John Doe",
-  email: "john@example.com",
+  name: "佐藤花子",
+  email: "sato@example.com",
   password: "password"
 )
 
 # ユーザー1の長期・中期目標とフィードバック
 goal1 = user1.goals.create!(
-  long_term_goal: "Become a recognized software engineer",
-  mid_term_goal: "Learn and master Ruby on Rails",
-  what_to_do: "Complete a goal-setting app",
-  why_to_do: "To practice full-stack development",
-  current_status: "Basic understanding of Rails",
-  why_current_status: "Limited experience",
-  what_next: "Build advanced features in the app",
+  long_term_goal: "認知されたソフトウェアエンジニアになる",
+  mid_term_goal: "Ruby on Rails を習得する",
+  what_to_do: "目標設定アプリを完成させる",
+  why_to_do: "フルスタック開発を練習するため",
+  current_status: "Rails の基本的な理解",
+  why_current_status: "経験が限られている",
+  what_next: "アプリに高度な機能を追加する",
   priority: :high,
   deadline: Time.now + 2.months
 )
 
 goal2 = user1.goals.create!(
-  long_term_goal: "Build a strong personal brand",
-  mid_term_goal: "Write technical blogs and give talks",
-  what_to_do: "Prepare for tech conferences",
-  why_to_do: "To increase visibility in the tech community",
-  current_status: "Moderate public speaking skills",
-  why_current_status: "Occasionally writes blogs",
-  what_next: "Submit proposals to tech conferences",
+  long_term_goal: "強力な個人ブランドを築く",
+  mid_term_goal: "技術ブログを書き、講演を行う",
+  what_to_do: "技術会議の準備をする",
+  why_to_do: "技術コミュニティでの知名度を高めるため",
+  current_status: "適度なプレゼンテーションスキル",
+  why_current_status: "時々ブログを書く",
+  what_next: "技術会議に提案を提出する",
   priority: :medium,
   deadline: Time.now + 3.months
 )
 
 goal1.feedbacks.create!(
   user: user1,
-  content: "Making good progress with the app development."
+  content: "アプリ開発の進捗が良好です。引き続き頑張りましょう！"
 )
 
 goal2.feedbacks.create!(
   user: user1,
-  content: "Good start with the blogging efforts. Keep it up!"
+  content: "ブログ活動はいいスタートです。続けていきましょう！"
 )
 
 # ユーザー2の長期・中期目標とフィードバック
 goal3 = user2.goals.create!(
-  long_term_goal: "Build a successful tech startup",
-  mid_term_goal: "Develop an MVP for the startup",
-  what_to_do: "Identify market needs and create a product roadmap",
-  why_to_do: "To solve significant problems in the industry",
-  current_status: "Exploring potential market opportunities",
-  why_current_status: "Limited customer feedback",
-  what_next: "Conduct market research and create a roadmap",
+  long_term_goal: "成功した技術系スタートアップを築く",
+  mid_term_goal: "スタートアップのMVPを開発する",
+  what_to_do: "市場ニーズを把握し、プロダクトロードマップを作成する",
+  why_to_do: "業界の重要な問題を解決するため",
+  current_status: "潜在的な市場機会を模索中",
+  why_current_status: "顧客からのフィードバックが限られている",
+  what_next: "市場調査を行い、ロードマップを作成する",
   priority: :high,
   deadline: Time.now + 6.months
 )
 
 goal4 = user2.goals.create!(
-  long_term_goal: "Become a leading expert in AI/ML",
-  mid_term_goal: "Complete advanced AI/ML courses",
-  what_to_do: "Enroll in online AI/ML programs",
-  why_to_do: "To gain practical skills in machine learning",
-  current_status: "Basic understanding of machine learning concepts",
-  why_current_status: "Completed introductory courses",
-  what_next: "Work on real-world machine learning projects",
+  long_term_goal: "AI/MLの第一人者になる",
+  mid_term_goal: "高度なAI/MLコースを修了する",
+  what_to_do: "オンラインのAI/MLプログラムに登録する",
+  why_to_do: "機械学習の実践的なスキルを身につけるため",
+  current_status: "機械学習の基礎的な概念の理解",
+  why_current_status: "入門コースを修了している",
+  what_next: "実際の機械学習プロジェクトに取り組む",
   priority: :medium,
   deadline: Time.now + 4.months
 )
 
 goal3.feedbacks.create!(
   user: user2,
-  content: "Solid product idea. Need more market research."
+  content: "しっかりとしたプロダクトのアイデアがありますが、市場調査が必要です。"
 )
 
 goal4.feedbacks.create!(
   user: user2,
-  content: "Good progress with the courses. Start practical projects!"
+  content: "コースの進捗は良いので、実践的なプロジェクトを始めましょう！"
 )
 
 
