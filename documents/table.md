@@ -20,7 +20,6 @@ erDiagram
     USERS {
       integer id
       string name
-      string email
       string password_hash
       datetime created_at
       datetime updated_at
@@ -29,8 +28,13 @@ erDiagram
     GOALS {
       integer id
       integer user_id
-      string title
-      text description
+      string long_term_goal
+      string mid_term_goal
+      text what_to_do
+      text why_to_do
+      text current_status
+      text why_current_status
+      text what_next
       integer priority
       datetime deadline
       datetime created_at
