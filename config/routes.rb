@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'feedback', to: 'pages#feedback'
   get 'goalset', to: 'pages#goalset'
   get 'progress', to: 'pages#progress'
+  get 'signup', to: 'users#new'
 
 
   resources :goals do
