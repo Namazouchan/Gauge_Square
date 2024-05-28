@@ -1,7 +1,7 @@
 <%= form_with(model: @user, local: true) do |form| %>
   <% if @user.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-      <h4 class="alert-heading"><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h4>
+      <h4 class="alert-heading"><%= pluralize(@user.errors.count, "エラー") %> が発生しました。以下の内容をご確認ください。</h4>
       <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -14,7 +14,7 @@
     <div class="col-md-6">
       <div class="mb-3">
         <%= form.label :username, class: "form-label" %>
-        <%= form.text_field :username, class: "form-control" %>
+        <%= form.text_field :name, class: "form-control" %>
       </div>
 
       <div class="mb-3">
