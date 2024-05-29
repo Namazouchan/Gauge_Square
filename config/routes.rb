@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   get 'feedback', to: 'pages#feedback'
   get 'goalset', to: 'pages#goalset'
   get 'progress', to: 'pages#progress'
+  get 'signup', to: 'users#new'
 
 
   resources :goals do
     resources :feedbacks, only: [:create, :destroy]
   end
 
-  resources :users, only: [:show, :create]
+  resources :users 
+  # only: [:show, :create]  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

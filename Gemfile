@@ -69,3 +69,7 @@ end
 gem "webpacker", "~> 5.4"
 
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'bootstrap', '~> 5.0'
+
+gem 'sassc-rails', '>= 2.1.0'
