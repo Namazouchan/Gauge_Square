@@ -48,55 +48,69 @@ Feedbacks - 目標に対するフィードバックを保持するテーブル
 | `updated_at`        | datetime  | Not Null    | 更新日時                                   |
 
 #### Feedbacks テーブル
-| カラム名      | データ型   | 制約         | 説明                     |
-|---------------|-----------|-------------|--------------------------|
-| `id`          | integer   | Primary Key | フィードバックID         |
-| `goal_id`     | integer   | Foreign Key | 関連する目標ID           |
-| `goal_type`   | string    | Not Null    | 目標の種類 (長期 or 中期) |
-| `user_id`     | integer   | Foreign Key | フィードバックを残したユーザーID |
-| `content`     | text      | Not Null    | フィードバック内容       |
-| `created_at`  | datetime  | Not Null    | 作成日時                 |
-| `updated_at`  | datetime  | Not Null    | 更新日時                 |
+
+| カラム名            | データ型   | 制約         | 説明                     |
+|---------------------|-----------|-------------|--------------------------|
+| `id`                | integer   | Primary Key | フィードバックID         |
+| `long_term_goal_id` | integer   | Foreign Key | 関連する長期目標ID       |
+| `mid_term_goal_id`  | integer   | Foreign Key | 関連する中期目標ID       |
+| `user_id`           | integer   | Foreign Key | フィードバックを残したユーザーID |
+| `content`           | text      | Not Null    | フィードバック内容       |
+| `created_at`        | datetime  | Not Null    | 作成日時                 |
+| `updated_at`        | datetime  | Not Null    | 更新日時                 |
+
 
 ```mermaid
 ---
 title: "Gauge_Square"
 ---
 erDiagram
-    USERS ||--o{ GOALS : "has"
-    GOALS ||--o{ FEEDBACKS : "has"
-    USERS ||--o{ FEEDBACKS : "provides"
-
     USERS {
-      integer id
-      string name
-      string password_hash
-      datetime created_at
-      datetime updated_at
+        integer id PK
+        string name
+        string password_hash
+        datetime created_at
+        datetime updated_at
     }
 
-    GOALS {
-      integer id
-      integer user_id
-      string long_term_goal
-      string mid_term_goal
-      text what_to_do
-      text why_to_do
-      text current_status
-      text why_current_status
-      text what_next
-      integer priority
-      datetime deadline
-      datetime created_at
-      datetime updated_at
+    LONG_TERM_GOALS {
+        integer id PK
+        integer user_id FK
+        string long_goal
+        datetime deadline
+        datetime created_at
+        datetime updated_at
+    }
+    
+    MID_TERM_GOALS {
+        integer id PK
+        integer user_id FK
+        integer long_term_goal_id FK
+        string mid_goal
+        text what_to_do
+        text why_to_do
+        text current_status
+        text why_current_status
+        text what_next
+        integer priority
+        datetime deadline
+        datetime created_at
+        datetime updated_at
     }
 
     FEEDBACKS {
-      integer id
-      integer goal_id
-      integer user_id
-      text content
-      datetime created_at
-      datetime updated_at
+        integer id PK
+        integer long_term_goal_id FK
+        integer mid_term_goal_id FK
+        integer user_id FK
+        text content
+        datetime created_at
+        datetime updated_at
     }
 
+    USERS ||--o{ LONG_TERM_GOALS : has
+    USERS ||--o{ MID_TERM_GOALS : has
+    LONG_TERM_GOALS ||--o{ MID_TERM_GOALS : includes
+    USERS ||--o{ FEEDBACKS : provides
+    LONG_TERM_GOALS ||--o{ FEEDBACKS : receives
+    MID_TERM_GOALS ||--o{ FEEDBACKS : receives
