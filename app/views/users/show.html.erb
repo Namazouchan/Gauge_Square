@@ -3,17 +3,5 @@
     <div class="card-header">
       <%= @user.name %>
     </div>
-    # bootstrap 練習で使用した。コードは叩き
-    <div class="card-body">
-      <h5 class="card-title">Priority: <%= @goal.priority %></h5>
-      <p class="card-text">Status: <%= @goal.status %></p>
-      <p class="card-text"><strong>Why:</strong> <%= @goal.reason %></p>
-      <p class="card-text"><strong>Next Steps:</strong> <%= @goal.next_steps %></p>
-      <div class="mt-4">
-        <%= link_to 'Edit', edit_goal_path(@goal), class: 'btn btn-primary' %>
-        <%= link_to 'Back to List', goals_path, class: 'btn btn-secondary' %> 
-        <%= link_to 'Delete', goal_path(@goal), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-      </div>
-    </div>
   </div>
 </div>
