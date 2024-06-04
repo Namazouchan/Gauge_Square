@@ -1,14 +1,24 @@
-
 # テーブル要件と設計
 ## テーブル構造
- 
-Long_term_goalsテーブル - 長期の目標を保持するテーブル
-Mid_term_goalsテーブル - 中期の目標を保持するテーブル
-Users - ユーザーの情報を保持するテーブル 
+
+Users - ユーザーの情報を保持するテーブル  
+Long_term_goals - 各ユーザーの目標を保持するテーブル  
+Mid_term_goals - 各ユーザーの目標を保持するテーブル  
 Feedbacks - 目標に対するフィードバックを保持するテーブル  
 
 ## テーブル詳細
-#### Long_term_goalsテーブル
+
+#### Users テーブル
+
+| カラム名         | データ型   | 制約             | 説明                |
+|-----------------|-----------|-----------------|---------------------|
+| `id`            | integer   | Primary Key     | ユーザーID          |
+| `name`          | string    | Not Null        | ユーザーの名前       |
+| `password_hash` | string    | Not Null        | ハッシュ化されたパスワード |
+| `created_at`    | datetime  | Not Null        | 作成日時            |
+| `updated_at`    | datetime  | Not Null        | 更新日時            |
+
+#### Long_term_goals テーブル
 
 | カラム名            | データ型   | 制約         | 説明                                        |
 |---------------------|-----------|-------------|---------------------------------------------|
@@ -19,8 +29,8 @@ Feedbacks - 目標に対するフィードバックを保持するテーブル
 | `created_at`        | datetime  | Not Null    | 作成日時                                   |
 | `updated_at`        | datetime  | Not Null    | 更新日時                                   |
 
+#### Mid_term_goals テーブル
 
-#### Mid_term_goalsテーブル
 | カラム名            | データ型   | 制約         | 説明                                        |
 |---------------------|-----------|-------------|---------------------------------------------|
 | `id`                | integer   | Primary Key | 目標ID                                     |
@@ -37,28 +47,16 @@ Feedbacks - 目標に対するフィードバックを保持するテーブル
 | `created_at`        | datetime  | Not Null    | 作成日時                                   |
 | `updated_at`        | datetime  | Not Null    | 更新日時                                   |
 
-
-#### Users テーブル
-
-| カラム名         | データ型   | 制約             | 説明                |
-|-----------------|-----------|-----------------|---------------------|
-| `id`            | integer   | Primary Key     | ユーザーID          |
-| `name`          | string    | Not Null        | ユーザーの名前       |
-| `password_hash` | string    | Not Null        | ハッシュ化されたパスワード |
-| `created_at`    | datetime  | Not Null        | 作成日時            |
-| `updated_at`    | datetime  | Not Null        | 更新日時            |
-
 #### Feedbacks テーブル
-
 | カラム名      | データ型   | 制約         | 説明                     |
 |---------------|-----------|-------------|--------------------------|
 | `id`          | integer   | Primary Key | フィードバックID         |
 | `goal_id`     | integer   | Foreign Key | 関連する目標ID           |
+| `goal_type`   | string    | Not Null    | 目標の種類 (長期 or 中期) |
 | `user_id`     | integer   | Foreign Key | フィードバックを残したユーザーID |
 | `content`     | text      | Not Null    | フィードバック内容       |
 | `created_at`  | datetime  | Not Null    | 作成日時                 |
 | `updated_at`  | datetime  | Not Null    | 更新日時                 |
-
 
 ```mermaid
 ---
@@ -102,11 +100,3 @@ erDiagram
       datetime updated_at
     }
 
-
-
-    USERS ||--o{ LONG_TERM_GOALS : has
-    USERS ||--o{ MID_TERM_GOALS : has
-    LONG_TERM_GOALS ||--o{ MID_TERM_GOALS : includes
-    USERS ||--o{ FEEDBACKS : provides
-    LONG_TERM_GOALS ||--o{ FEEDBACKS : receives
-    MID_TERM_GOALS ||--o{ FEEDBACKS : receives
