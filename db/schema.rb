@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_04_235126) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_05_081023) do
   create_table "feedbacks", force: :cascade do |t|
     t.integer "long_term_goal_id"
     t.integer "mid_term_goal_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_235126) do
     t.datetime "deadline"
     t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.boolean "is_complete", default: false, null: false
     t.index ["user_id"], name: "index_long_term_goals_on_user_id"
   end
 
@@ -61,6 +62,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_235126) do
     t.datetime "deadline"
     t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.boolean "is_complete", default: false, null: false
     t.index ["long_term_goal_id"], name: "index_mid_term_goals_on_long_term_goal_id"
     t.index ["user_id"], name: "index_mid_term_goals_on_user_id"
   end
