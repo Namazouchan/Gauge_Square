@@ -1,32 +1,21 @@
-# db/seeds.rb
-
 # ユーザー
-user1 = User.create!(
-  name: "山田太郎", password: "password")
-user2 = User.create!(
-  name: "鈴木花子", password: "password")
+user1 = User.create(name: "山田太郎", password: "password1")
+user2 = User.create(name: "鈴木花子", password: "password2")
 
 # 長期目標
-ltg1 = LongTermGoal.create!(
-  user: user1, long_goal: "Ruby on Railsのプロフェッショナルになる", deadline: "2025-12-31")
-ltg2 = LongTermGoal.create!(
-  user: user2, long_goal: "フルマラソンを完走する", deadline: "2024-06-30")
+ltg1 = LongTermGoal.create(user: user1, long_goal: "Ruby on Railsのプロフェッショナルになる", deadline: "2025-12-31", is_complete: false)
+ltg2 = LongTermGoal.create(user: user2, long_goal: "フルマラソンを完走する", deadline: "2024-06-30", is_complete: true)
 
 # 中期目標
-mtg1 = MidTermGoal.create!(
-  user: user1, long_term_goal: ltg1, mid_goal: "オンラインのRailsコースを修了する", what_to_do: "毎日1時間勉強する", why_to_do: "スキルを身につけるため", current_status: "コースの半分が完了", why_current_status: "毎日継続しているため", what_next: "残りのコースを終える", priority: 2, deadline: "2025-06-30")
-mtg2 = MidTermGoal.create!(
-  user: user2, long_term_goal: ltg2, mid_goal: "10kmを止まらずに走る", what_to_do: "毎週末にランニングする", why_to_do: "持久力をつけるため", current_status: "5km走れるようになった", why_current_status: "毎週トレーニングしているため", what_next: "次は7kmに挑戦する", priority: 3, deadline: "2024-03-31")
+mtg1 = MidTermGoal.create(user: user1, long_term_goal: ltg1, mid_goal: "オンラインのRailsコースを修了する", what_to_do: "毎日1時間勉強する", why_to_do: "スキルを身につけるため", current_status: "コースの半分が完了", why_current_status: "毎日継続しているため", what_next: "残りのコースを終える", priority: 2, deadline: "2025-06-30", is_complete: false)
+mtg2 = MidTermGoal.create(user: user2, long_term_goal: ltg2, mid_goal: "10kmを止まらずに走る", what_to_do: "毎週末にランニングする", why_to_do: "持久力をつけるため", current_status: "5km走れるようになった", why_current_status: "毎週トレーニングしているため", what_next: "次は7kmに挑戦する", priority: 3, deadline: "2024-03-31", is_complete: true)
 
 # フィードバック
-Feedback.create!(
-  user: user1, long_term_goal: ltg1, content: "今までの進捗は素晴らしいです！")
-Feedback.create!(
-  user: user2, mid_term_goal: mtg2, content: "この調子で頑張りましょう！")
-Feedback.create!(
-  user: user1, mid_term_goal: mtg1, content: "毎日の継続が大事です。引き続き頑張りましょう！")
-Feedback.create!(
-  user: user2, long_term_goal: ltg2, content: "フルマラソン完走を目指して、着実に進んでいますね。")
+Feedback.create(user: user1, long_term_goal: ltg1, content: "今までの進捗は素晴らしいです！")
+Feedback.create(user: user2, mid_term_goal: mtg2, content: "この調子で頑張りましょう！")
+Feedback.create(user: user1, mid_term_goal: mtg1, content: "毎日の継続が大事です。引き続き頑張りましょう！")
+Feedback.create(user: user2, long_term_goal: ltg2, content: "フルマラソン完走を目指して、着実に進んでいますね。")
+
 
 
 
