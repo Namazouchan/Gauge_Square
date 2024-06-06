@@ -26,6 +26,7 @@ Feedbacks - 目標に対するフィードバックを保持するテーブル
 | `user_id`           | integer   | Foreign Key | 関連するユーザーID                         |
 | `long_goal`         | string    | Not Null    | 長期的な目標                               |
 | `deadline`          | datetime  |             | 目標の締め切り日時                         |
+| `is_complete`       | boolean   | Not Null    | default: false true: complete            |
 | `created_at`        | datetime  | Not Null    | 作成日時                                   |
 | `updated_at`        | datetime  | Not Null    | 更新日時                                   |
 
@@ -44,6 +45,7 @@ Feedbacks - 目標に対するフィードバックを保持するテーブル
 | `what_next`         | text      |             | では何をするのか                           |
 | `priority`          | integer   | Not Null    | 1: low, 2: medium, 3: high                 |
 | `deadline`          | datetime  |             | 目標の締め切り日時                         |
+| `is_complete`       | boolean   | Not Null    | default: false true: complete            |
 | `created_at`        | datetime  | Not Null    | 作成日時                                   |
 | `updated_at`        | datetime  | Not Null    | 更新日時                                   |
 
@@ -78,6 +80,7 @@ erDiagram
         integer user_id FK
         string long_goal
         datetime deadline
+        boolean is_complete
         datetime created_at
         datetime updated_at
     }
@@ -94,6 +97,7 @@ erDiagram
         text what_next
         integer priority
         datetime deadline
+        boolean is_complete
         datetime created_at
         datetime updated_at
     }
