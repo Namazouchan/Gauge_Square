@@ -3,6 +3,7 @@
 
 .sidebar {
   width: 100px; /* サイドバーの幅 */
+  margin-left: 10px;
   position: fixed; /* 画面をスクロールしても固定 */
   height: 100%; /* 画面全体の高さ */
   background-color: #F5F5F5; /* サイドバーの背景色 */
@@ -11,6 +12,9 @@
   color: white; /* テキスト色 */
   padding: 20px; /* 内側の余白 */
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* サイドバー内の要素を中央に揃える */
 }
 
 .app-icon img {
@@ -41,6 +45,29 @@
   height: auto; /* 高さは内容に応じて自動調整 */
   position: relative; /* 相対的な位置 */
   overflow: auto; /* 内容がはみ出た場合はスクロールバーを表示 */
+}
+
+.logged-in-button {
+  font-size: 13px;
+  text-align: center;
+}
+
+.logged-in-button a {
+  color: #007bff; /* フォントの色 */
+  text-decoration: none; /* 下線を消す */
+  font-weight: bold; /* フォントの太さ */
+  margin-bottom: 10px; /* 下に余白を追加 */
+  display: block; /* 各リンクをブロック要素として表示 */
+  text-align: center; /* 中央揃え */
+}
+
+.logged-in-button a:hover {
+  color: #0056b3; /* ホバー時の色 */
+  text-decoration: underline; /* ホバー時に下線を追加 */
+}
+
+.logged-in-button .divider {
+  border-top: 1px solid #ddd; /* 区切り線の色とスタイル */
 }
 
 body {
