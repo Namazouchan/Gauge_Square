@@ -9,12 +9,24 @@
     <div class="top-contents">
         <div class="welcome-box">
             <h2>Welcome Back</h2>
-            <p class="top-username">ユーザー名</p>
+            <p class="top-username">
+                <% if logged_in? %>
+                    <%= current_user.name %>さん
+                <% else %>
+                    ユーザー名さん
+                <% end %>
+            </p>
             <p>今日も目標達成に向けて行動しましょう！</p>
         </div>
         <div class="user-box">
             <%= link_to(image_tag('usericon.png', alt: 'usericon', class: 'user-icon')) %>
-            <p class="icon-username">ユーザー名</p>
+            <p class="icon-username">
+                <% if logged_in? %>
+                    <%= current_user.name %> さん
+                <% else %>
+                    ユーザー名 さん
+                <% end %>
+            </p>
             <button class="button">View Profile</button>
             <button class="button">Edit Profile</button>
         </div>
