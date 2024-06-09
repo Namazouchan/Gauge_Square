@@ -54,7 +54,6 @@ Feedbacks - 目標に対するフィードバックを保持するテーブル
 | カラム名            | データ型   | 制約         | 説明                     |
 |---------------------|-----------|-------------|--------------------------|
 | `id`                | integer   | Primary Key | フィードバックID         |
-| `long_term_goal_id` | integer   | Foreign Key | 関連する長期目標ID       |
 | `mid_term_goal_id`  | integer   | Foreign Key | 関連する中期目標ID       |
 | `user_id`           | integer   | Foreign Key | フィードバックを残したユーザーID |
 | `content`           | text      | Not Null    | フィードバック内容       |
@@ -104,7 +103,6 @@ erDiagram
 
     FEEDBACKS {
         integer id PK
-        integer long_term_goal_id FK
         integer mid_term_goal_id FK
         integer user_id FK
         text content
