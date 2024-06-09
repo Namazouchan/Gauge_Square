@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_05_081023) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_09_021441) do
   create_table "feedbacks", force: :cascade do |t|
-    t.integer "long_term_goal_id"
     t.integer "mid_term_goal_id"
     t.integer "user_id", null: false
     t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["long_term_goal_id"], name: "index_feedbacks_on_long_term_goal_id"
     t.index ["mid_term_goal_id"], name: "index_feedbacks_on_mid_term_goal_id"
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
@@ -74,7 +72,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_05_081023) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "feedbacks", "long_term_goals"
   add_foreign_key "feedbacks", "mid_term_goals"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "goals", "users"
