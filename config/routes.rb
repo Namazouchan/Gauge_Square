@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  post '/goals', to: 'goals#create'
+
   resources :goals do
     resources :feedbacks, only: [:create, :destroy]
   end
