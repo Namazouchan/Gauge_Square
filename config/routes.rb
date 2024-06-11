@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'home', to: 'pages#home'
   get 'complete', to: 'pages#complete'
   get 'feedback', to: 'pages#feedback'
-  get 'goalset', to: 'pages#goalset'
+  # get 'goalset', to: 'pages#goalset'
   get 'progress', to: 'pages#progress'
   get 'signup', to: 'users#new'
 
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  get '/goalset', to: 'goals#new'
   post '/goals', to: 'goals#create'
 
   resources :goals do
