@@ -42,12 +42,19 @@
         <%= form.label :priority, '優先順位', class: "form-label" %>
         <%= form.select :priority, options_for_select([['low', 1], ['medium', 2], ['high', 3]]), {}, { class: "form-control" } %>
       </div>
-      <div class="row justify-content-center">
+
+      <div class="row justify-content-center mb-3">
         <div class="col-auto">
-          <%= form.submit '登録', class: "btn btn-primary" %>
+          <button type="button" class="btn btn-primary" id="add-mid-term-goals">+</button>
+          <button type="button" class="btn btn-danger">ー</button>
         </div>
       </div>
-    
+
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <%= form.submit '登録', class: "btn btn-success" %>
+        </div>
+      </div>
     </div>
   </div>
 <% end %>
