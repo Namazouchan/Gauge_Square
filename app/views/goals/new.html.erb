@@ -7,9 +7,10 @@
         <%= form.text_field :long_goal, class: "form-control" %>
       </div>
       <div class="mb-5">
-        <%= form.label :deadline, '締め切り', class: "form-label" %>
-        <%= form.date_field :deadline, class: "form-control" %>
+        <%= form.label :long_goal_deadline, '締め切り', class: "form-label" %>
+        <%= form.date_field :long_goal_deadline, class: "form-control" %>
       </div>
+      
       <div class="mb-3">
         <%= form.label :mid_goal, '中期的な目標', class: "form-label" %>
         <%= form.text_field :mid_goal, class: "form-control" %>
@@ -35,8 +36,8 @@
         <%= form.text_field :what_next, class: "form-control" %>
       </div>
       <div class="mb-3">
-        <%= form.label :deadline, '締め切り', class: "form-label" %>
-        <%= form.date_field :deadline, class: "form-control" %>
+        <%= form.label :mid_goal_deadline, '締め切り', class: "form-label" %>
+        <%= form.date_field :mid_goal_deadline, class: "form-control" %>
       </div>
       <div class="mb-3">
         <%= form.label :priority, '優先順位', class: "form-label" %>
@@ -55,6 +56,7 @@
           <%= form.submit '登録', class: "btn btn-success" %>
         </div>
       </div>
+
     </div>
   </div>
 <% end %>
