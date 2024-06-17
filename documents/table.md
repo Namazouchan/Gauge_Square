@@ -25,7 +25,7 @@ Feedbacks - 目標に対するフィードバックを保持するテーブル
 | `id`                | integer   | Primary Key | 目標ID                                     |
 | `user_id`           | integer   | Foreign Key | 関連するユーザーID                         |
 | `long_goal`         | string    | Not Null    | 長期的な目標                               |
-| `deadline`          | datetime  |             | 目標の締め切り日時                         |
+| `long_goal_deadline`          | datetime  |             | 目標の締め切り日時                         |
 | `is_complete`       | boolean   | Not Null    | default: false true: complete            |
 | `created_at`        | datetime  | Not Null    | 作成日時                                   |
 | `updated_at`        | datetime  | Not Null    | 更新日時                                   |
@@ -44,7 +44,7 @@ Feedbacks - 目標に対するフィードバックを保持するテーブル
 | `why_current_status`| text      |             | なぜ現状がそうなっているのか               |
 | `what_next`         | text      |             | では何をするのか                           |
 | `priority`          | integer   | Not Null    | 1: low, 2: medium, 3: high                 |
-| `deadline`          | datetime  |             | 目標の締め切り日時                         |
+| `mid_goal_deadline`          | datetime  |             | 目標の締め切り日時                         |
 | `is_complete`       | boolean   | Not Null    | default: false true: complete            |
 | `created_at`        | datetime  | Not Null    | 作成日時                                   |
 | `updated_at`        | datetime  | Not Null    | 更新日時                                   |
