@@ -33,9 +33,15 @@
 
 
   <div class="main-content">
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success"><%= flash[:notice] %></div>
     <% end %>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
+
     <%= debug session %>
     <%= debug current_user %>
     <%= debug logged_in? %>
