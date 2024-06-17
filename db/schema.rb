@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_09_021441) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_17_040818) do
   create_table "feedbacks", force: :cascade do |t|
     t.integer "mid_term_goal_id"
     t.integer "user_id", null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_09_021441) do
   create_table "long_term_goals", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "long_goal", null: false
-    t.datetime "deadline"
+    t.datetime "long_goal_deadline"
     t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.boolean "is_complete", default: false, null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_09_021441) do
     t.text "why_current_status"
     t.text "what_next"
     t.integer "priority", null: false
-    t.datetime "deadline"
+    t.datetime "mid_goal_deadline"
     t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.boolean "is_complete", default: false, null: false
