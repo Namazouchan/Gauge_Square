@@ -3,13 +3,16 @@ Rails.application.routes.draw do
   get 'home', to: 'pages#home'
   get 'complete', to: 'pages#complete'
   get 'feedback', to: 'pages#feedback'
-  get 'goalset', to: 'pages#goalset'
+  # get 'goalset', to: 'pages#goalset'
   get 'progress', to: 'pages#progress'
   get 'signup', to: 'users#new'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  get '/goalset', to: 'goals#new'
+  post '/goals', to: 'goals#create'
 
   resources :goals do
     resources :feedbacks, only: [:create, :destroy]

@@ -1,5 +1,4 @@
 class GoalsController < ApplicationController
-    before_action :set_goal, only: [:show, :edit, :update, :destroy]
 
     def index
       @goals = Goal.all
@@ -9,18 +8,34 @@ class GoalsController < ApplicationController
     end
   
     def new
-      @goal = Goal.new
+      @long_term_goal = LongTermGoal.new
+      @mid_term_goal = MidTermGoal.new
     end
   
-    def create
-      @goal = Goal.new(goal_params)
-      @goal.user = User.first # 本来はログインユーザーに変更すべき
-      if @goal.save
-        redirect_to @goal, notice: '目標が作成されました。'
-      else
-        render :new
+  def create
+    @long_term_goal = LongTermGoal.new(long_term_goal_params)
+    @mid_term_goal = MidTermGoal.new(mid_term_goal_params)
+    
+    # ユーザー情報を設定
+    @long_term_goal.user = current_user
+    @mid_term_goal.user = current_user
+    @mid_term_goal.long_term_goal = @long_term_goal
+
+    if logged_in?
+      # トランザクションで保存
+      ActiveRecord::Base.transaction do
+        @long_term_goal.save!
+        @mid_term_goal.save!
       end
+      redirect_to goals_path, notice: '目標が作成されました。'
+    else
+      flash.now[:alert] = 'ログインしてください。'
+      render :new
     end
+  rescue ActiveRecord::RecordInvalid => e
+    flash.now[:alert] = e.message
+    render :new
+  end
   
     def edit
     end
@@ -43,11 +58,12 @@ class GoalsController < ApplicationController
     def set_goal
       @goal = Goal.find(params[:id])
     end
-  
-    def goal_params
-      params.require(:goal).permit(
-        :long_term_goal, :mid_term_goal, :what_to_do, :why_to_do,
-        :current_status, :why_current_status, :what_next, :priority, :deadline
-      )
+
+    def long_term_goal_params
+      params.require(:goal).permit(:long_goal, :long_goal_deadline)
+    end
+    
+    def mid_term_goal_params
+      params.require(:goal).permit(:mid_goal, :what_to_do, :why_to_do, :current_status, :why_current_status, :what_next, :mid_goal_deadline, :priority)
     end
 end
