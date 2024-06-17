@@ -1,8 +1,9 @@
 class GoalsController < ApplicationController
 
-    def index
-      @goals = Goal.all
-    end
+    # エラー出てたので、一旦コメントアウト
+    # def index
+    #   @goals = Goal.all
+    # end
   
     def show
     end
