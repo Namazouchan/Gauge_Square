@@ -42,6 +42,10 @@
       <div class="alert alert-danger"><%= flash[:alert] %></div>
     <% end %>
 
+    <% if flash[:danger] %>
+      <div class="alert alert-danger"><%= flash[:danger] %></div>
+    <% end %>
+
     <%= debug session %>
     <%= debug current_user %>
     <%= debug logged_in? %>
