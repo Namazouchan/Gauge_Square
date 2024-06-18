@@ -1,8 +1,9 @@
 class GoalsController < ApplicationController
 
-    def index
-      @goals = Goal.all
-    end
+    # エラー出てたので、一旦コメントアウト
+    # def index
+    #   @goals = Goal.all
+    # end
   
     def show
     end
@@ -30,7 +31,7 @@ class GoalsController < ApplicationController
       redirect_to goals_path, notice: '目標が作成されました。'
     else
       flash.now[:alert] = 'ログインしてください。'
-      render :new
+      render :new, status: :unprocessable_entity
     end
   rescue ActiveRecord::RecordInvalid => e
     flash.now[:alert] = e.message

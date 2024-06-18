@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to user
     else
       flash.now[:danger] = '認証できませんでした。入力内容を確認してください。'
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 

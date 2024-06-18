@@ -16,7 +16,7 @@ class UsersController < ApplicationController
           log_in @user
           redirect_to root_path, notice: 'ユーザーが作成されました'
         else
-          render :new
+          render :new, status: :unprocessable_entity
         end
       end
     
