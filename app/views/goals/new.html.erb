@@ -11,43 +11,47 @@
         <%= form.date_field :long_goal_deadline, class: "form-control" %>
       </div>
       
-      <div class="mb-3">
-        <%= form.label :mid_goal, '中期的な目標', class: "form-label" %>
-        <%= form.text_field :mid_goal, class: "form-control" %>
-      </div>
-      <div class="mb-3">
-        <%= form.label :what_to_do, '何をするのか', class: "form-label" %>
-        <%= form.text_field :what_to_do, class: "form-control" %>
-      </div>
-      <div class="mb-3">
-        <%= form.label :why_to_do, 'なぜそれを行うのか', class: "form-label" %>
-        <%= form.text_field :why_to_do, class: "form-control" %>
-      </div>
-      <div class="mb-3">
-        <%= form.label :current_status, '現状どうなのか', class: "form-label" %>
-        <%= form.text_field :current_status, class: "form-control" %>
-      </div>
-      <div class="mb-3">
-        <%= form.label :why_current_status, 'なぜ現状そうなっているのか', class: "form-label" %>
-        <%= form.text_field :why_current_status, class: "form-control" %>
-      </div>
-      <div class="mb-3">
-        <%= form.label :what_next, 'では何をするのか', class: "form-label" %>
-        <%= form.text_field :what_next, class: "form-control" %>
-      </div>
-      <div class="mb-3">
-        <%= form.label :mid_goal_deadline, '締め切り', class: "form-label" %>
-        <%= form.date_field :mid_goal_deadline, class: "form-control" %>
-      </div>
-      <div class="mb-3">
-        <%= form.label :priority, '優先順位', class: "form-label" %>
-        <%= form.select :priority, options_for_select([['low', 1], ['medium', 2], ['high', 3]]), {}, { class: "form-control" } %>
-      </div>
+      <div id="mid-goals">
+        <div class="mid-goals-field">
+          <div class="mb-3">
+            <%= form.label :mid_goal, '中期的な目標', class: "form-label" %>
+            <%= form.text_field :mid_goal, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :what_to_do, '何をするのか', class: "form-label" %>
+            <%= form.text_field :what_to_do, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :why_to_do, 'なぜそれを行うのか', class: "form-label" %>
+            <%= form.text_field :why_to_do, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :current_status, '現状どうなのか', class: "form-label" %>
+            <%= form.text_field :current_status, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :why_current_status, 'なぜ現状そうなっているのか', class: "form-label" %>
+            <%= form.text_field :why_current_status, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :what_next, 'では何をするのか', class: "form-label" %>
+            <%= form.text_field :what_next, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :mid_goal_deadline, '締め切り', class: "form-label" %>
+            <%= form.date_field :mid_goal_deadline, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :priority, '優先順位', class: "form-label" %>
+            <%= form.select :priority, options_for_select([['low', 1], ['medium', 2], ['high', 3]]), {}, { class: "form-control" } %>
+          </div>
 
-      <div class="row justify-content-center mb-3">
-        <div class="col-auto">
-          <button type="button" class="btn btn-primary" id="add-mid-term-goals">+</button>
-          <button type="button" class="btn btn-danger">-</button>
+          <div class="row justify-content-center mb-3">
+            <div class="col-auto">
+              <button type="button" class="btn btn-primary" id="add-mid-term-goals">+</button>
+              <button type="button" class="btn btn-danger">-</button>
+            </div>
+          </div>
         </div>
       </div>
 
