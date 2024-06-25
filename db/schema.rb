@@ -21,22 +21,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_17_040818) do
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
-  create_table "goals", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "long_term_goal"
-    t.string "mid_term_goal"
-    t.text "what_to_do"
-    t.text "why_to_do"
-    t.text "current_status"
-    t.text "why_current_status"
-    t.text "what_next"
-    t.integer "priority", default: 1, null: false
-    t.datetime "deadline"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_goals_on_user_id"
-  end
-
   create_table "long_term_goals", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "long_goal", null: false
@@ -74,7 +58,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_17_040818) do
 
   add_foreign_key "feedbacks", "mid_term_goals"
   add_foreign_key "feedbacks", "users"
-  add_foreign_key "goals", "users"
   add_foreign_key "long_term_goals", "users"
   add_foreign_key "mid_term_goals", "long_term_goals"
   add_foreign_key "mid_term_goals", "users"
