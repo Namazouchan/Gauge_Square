@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>目標確認ページ</title>
+    <%= stylesheet_link_tag 'progress' %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <h2>現在掲げている目標一覧</h2>
+        <ul>
+        <% @long_term_goals.each do |goal| %>
+            <li>
+            <strong>Goal:</strong> <%= goal.long_goal %><br>
+            <strong>Deadline:</strong> <%= goal.long_goal_deadline %><br>
+            <strong>Created at:</strong> <%= goal.created_at %><br>
+            </li>
+        <% end %>
+        </ul>
+
+        <h2>Mid Term Goals</h2>
+        <ul>
+        <% @mid_term_goals.each do |goal| %>
+            <li>
+            <strong>Goal:</strong> <%= goal.mid_goal %><br>
+            <strong>What to do:</strong> <%= goal.what_to_do %><br>
+            <strong>Why to do:</strong> <%= goal.why_to_do %><br>
+            <strong>Current status:</strong> <%= goal.current_status %><br>
+            <strong>Next steps:</strong> <%= goal.what_next %><br>
+            <strong>Priority:</strong> <%= goal.priority %><br>
+            <strong>Deadline:</strong> <%= goal.mid_goal_deadline %><br>
+            <strong>Created at:</strong> <%= goal.created_at %><br>
+            </li>
+        <% end %>
+        </ul>
+</div>
+  </div>
+</body>
+</html>

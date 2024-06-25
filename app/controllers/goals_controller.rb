@@ -1,9 +1,11 @@
 class GoalsController < ApplicationController
-    before_action :authenticate_user!
-
     def index
       @long_term_goals = current_user.long_term_goals
       @Mid_term_goals = current_user.mid_term_goals
+
+      Rails.logger.debug "Long Term Goals: #{@long_term_goals.inspect}"
+      Rails.logger.debug "Mid Term Goals: #{@mid_term_goals.inspect}"
+      Rails.logger.debug "Current User: #{current_user.inspect}"
     end
   
     def show

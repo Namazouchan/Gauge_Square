@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :feedbacks, only: [:create, :destroy]
   end
 
+  get '/goalindex', to: 'goals#index'
+
   resources :users 
   # only: [:show, :create]  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
