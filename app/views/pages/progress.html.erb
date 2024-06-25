@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <title>目標設定ページ</title>
     <%= stylesheet_link_tag 'progress' %>
-    <%# <%= javascript_include_tag 'progress' %>
+    <%= javascript_importmap_tags %>
   </head>
   <body>
-  <h1>目標設定確認ページ</h1>
-  <h2>長期的な目標</h2>
-    <p><strong>エンジニアとしてキャリアを成功させる。</strong></p>
-  <div class="goal-block">
-      <h2>中期的な目標</h2>
-      <p><strong>何をするのか:</strong> 新しい技術を学ぶ</p>
-      <p><strong>なぜそれを行うのか:</strong> キャリアアップのため</p>
-      <p><strong>現状どうなのか:</strong> 基本的な知識しかない</p>
-      <p><strong>なぜそうなるのか:</strong> 学習時間が足りない</p>
-      <p><strong>では何をするのか:</strong> 毎日1時間勉強する</p>
-      <p><strong>優先順位:</strong> 高</p>
-      <p><strong>期日:</strong> 2024/1/1〜2024/3/30</p>
+    <h1>目標設定確認ページ</h1>
+      <ul class="tabs">
+        <li><a href="#long">長期目標</a></li>
+        <li><a href="#mid">中期目標</a></li>
+      </ul>
+      <div id="long">
+        <% @long_term_goals.each do |long_goal| %>
+          <h2><%= link_to long_goal.long_goal, long_goal_path(long_goal) %></h2>
+        <% end %>
+      </div>
+      <div id="mid">
+        <% @mid_term_goals.each do |mid_goal| %>
+          <h2><%= link_to mid_goal.mid_goal, mid_goal_path(mid_goal) %></h2>
+        <% end %>
+      </div>
+</div>
   </div>
 </body>
 </html>
