@@ -1,9 +1,10 @@
 class GoalsController < ApplicationController
+    before_action :authenticate_user!
 
-    # エラー出てたので、一旦コメントアウト
-    # def index
-    #   @goals = Goal.all
-    # end
+    def index
+      @long_term_goals = current_user.long_term_goals
+      @Mid_term_goals = current_user.mid_term_goals
+    end
   
     def show
     end
