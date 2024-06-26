@@ -8,6 +8,7 @@
   </head>
   <body>
     <h2>現在掲げている目標一覧</h2>
+      <% if @long_term_goals.present? %>
         <ul>
         <% @long_term_goals.each do |goal| %>
             <li>
@@ -17,22 +18,31 @@
             </li>
         <% end %>
         </ul>
+      <% else %>
+        <p>No long term goals found.</p>
+        <p><%= @long_term_goals.inspect %></p> 
+      <% end %>
 
         <h2>Mid Term Goals</h2>
-        <ul>
-        <% @mid_term_goals.each do |goal| %>
-            <li>
-            <strong>Goal:</strong> <%= goal.mid_goal %><br>
-            <strong>What to do:</strong> <%= goal.what_to_do %><br>
-            <strong>Why to do:</strong> <%= goal.why_to_do %><br>
-            <strong>Current status:</strong> <%= goal.current_status %><br>
-            <strong>Next steps:</strong> <%= goal.what_next %><br>
-            <strong>Priority:</strong> <%= goal.priority %><br>
-            <strong>Deadline:</strong> <%= goal.mid_goal_deadline %><br>
-            <strong>Created at:</strong> <%= goal.created_at %><br>
-            </li>
+        <% if @mid_term_goals.present? %>
+          <ul>
+            <% @mid_term_goals.each do |goal| %>
+              <li>
+                <strong>Goal:</strong> <%= goal.mid_goal %><br>
+                <strong>What to do:</strong> <%= goal.what_to_do %><br>
+                <strong>Why to do:</strong> <%= goal.why_to_do %><br>
+                <strong>Current status:</strong> <%= goal.current_status %><br>
+                <strong>Next steps:</strong> <%= goal.what_next %><br>
+                <strong>Priority:</strong> <%= goal.priority %><br>
+                <strong>Deadline:</strong> <%= goal.mid_goal_deadline %><br>
+                <strong>Created at:</strong> <%= goal.created_at %><br>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>No mid term goals found.</p>
+          <p><%= @mid_term_goals.inspect %></p> 
         <% end %>
-        </ul>
 </div>
   </div>
 </body>
