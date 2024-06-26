@@ -19,6 +19,7 @@
                     <strong>長期的な目標:</strong> <%= goal.long_goal %><br>
                     <strong>締め切り:</strong> <%= goal.long_goal_deadline.strftime("%Y/%m/%d") %><br>
                     <strong>目標作成した日:</strong> <%= goal.created_at.strftime("%Y/%m/%d") %><br>
+                    <%= link_to 'Edit', edit_goal_path(goal, type: 'long_term') %>
                 </li>
                 <% end %>
             </ul>
@@ -42,6 +43,7 @@
                     <strong>優先順位:</strong> <%= goal.priority %><br>
                     <strong>Deadline:</strong> <%= goal.mid_goal_deadline.try(:strftime, "%Y-%m-%d") || "締め切りが設定されていません" %><br>
                     <strong>目標を作成した日:</strong> <%= goal.created_at.strftime("%Y/%m/%d") %><br>
+                    <%= link_to 'Edit', edit_goal_path(goal, type: 'mid_term') %>
                 </li>
                 <% end %>
             </ul>

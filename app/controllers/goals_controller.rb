@@ -1,4 +1,6 @@
 class GoalsController < ApplicationController
+    before_action :set_goal, only: [:edit, :update]
+
     def index
       @long_term_goals = current_user.long_term_goals
       @mid_term_goals = current_user.mid_term_goals
@@ -7,7 +9,17 @@ class GoalsController < ApplicationController
       Rails.logger.debug "Long Term Goals: #{@long_term_goals.inspect}"
       Rails.logger.debug "Mid Term Goals: #{@mid_term_goals.inspect}"
 
-      # render plain: "Current User: #{@current_user.inspect}\nLong Term Goals: #{@long_term_goals.inspect}\nMid Term Goals: #{@mid_term_goals.inspect}"
+    end
+
+    def update
+      if @goal.update(goals_params)
+        redirect_to goals_path, notice: '目標が更新されました'
+      else
+        render :edit
+      end
+    end
+
+    def edit
     end
   
     def show
@@ -17,60 +29,6 @@ class GoalsController < ApplicationController
       @long_term_goal = LongTermGoal.new
       @mid_term_goal = MidTermGoal.new
     end
-  
-#   def create
-#     @long_term_goal = LongTermGoal.new(long_term_goal_params)
-#     mid_term_goals = []
-#     mid_term_goals << MidTermGoal.new(mid_term_goal_params) if params[:goal][:mid_goal].present?
-#     mid_term_goals << MidTermGoal.new(mid_term_goal_params_2) if params[:goal][:mid_goal_2].present?
-#     mid_term_goals << MidTermGoal.new(mid_term_goal_params_3) if params[:goal][:mid_goal_3].present?
-#     mid_term_goals << MidTermGoal.new(mid_term_goal_params_4) if params[:goal][:mid_goal_4].present?
-#     mid_term_goals << MidTermGoal.new(mid_term_goal_params_5) if params[:goal][:mid_goal_5].present?
-
-#     @long_term_goal.user = current_user
-#     mid_term_goals.each do |mid_term_goal|
-#       mid_term_goal.user = current_user
-#       mid_term_goal.long_term_goal = @long_term_goal
-#     end
-
-#     if logged_in?
-#       # トランザクションで保存
-#       ActiveRecord::Base.transaction do
-#         @long_term_goal.save!
-#         mid_term_goals.each(&:save!)
-#       end
-#       redirect_to goals_path, notice: '目標が作成されました。'
-#     else
-#       flash.now[:alert] = 'ログインしてください。'
-#       render :new, status: :unprocessable_entity
-#     end
-#   rescue ActiveRecord::RecordInvalid => e
-#     flash.now[:alert] = e.message
-#     render :new
-#   end
-  
-#     private
-
-#     def long_term_goal_params
-#       params.require(:goal).permit(:long_goal, :long_goal_deadline)
-#     end
-    
-#     def mid_term_goal_params
-#       params.require(:goal).permit(:mid_goal, :what_to_do, :why_to_do, :current_status, :why_current_status, :what_next, :mid_goal_deadline, :priority)
-#     end
-#     def mid_term_goal_params_2
-#       params.require(:goal).permit(:mid_goal, :what_to_do, :why_to_do, :current_status, :why_current_status, :what_next, :mid_goal_deadline, :priority)
-#     end
-#     def mid_term_goal_params_3
-#       params.require(:goal).permit(:mid_goal, :what_to_do, :why_to_do, :current_status, :why_current_status, :what_next, :mid_goal_deadline, :priority)
-#     end
-#     def mid_term_goal_params_4
-#       params.require(:goal).permit(:mid_goal, :what_to_do, :why_to_do, :current_status, :why_current_status, :what_next, :mid_goal_deadline, :priority)
-#     end
-#     def mid_term_goal_params_5
-#       params.require(:goal).permit(:mid_goal, :what_to_do, :why_to_do, :current_status, :why_current_status, :what_next, :mid_goal_deadline, :priority)
-#     end
-# end
 
     def create
       @long_term_goal = LongTermGoal.new(long_term_goal_params)
@@ -114,6 +72,22 @@ class GoalsController < ApplicationController
     end
 
     private
+
+    def set_goal
+      @goal = if params[:type] == 'long_term'
+        LongTermGoal.find(params[:id])
+      else
+        MidTermGoal.find(params[:id])
+      end
+    end
+
+    def goal_params
+      if params[:type] == 'long_term'
+        params.require(:long_term_goal).permit(:long_goal, :long_goal_deadline)
+      else
+        params.require(:mid_term_goal).permit(:mid_goal, :what_to_do, :why_to_do, :current_status, :why_current_status, :what_next, :priority, :mid_goal_deadline)
+      end
+    end
 
     def long_term_goal_params
       params.require(:goal).permit(:long_goal, :long_goal_deadline)
