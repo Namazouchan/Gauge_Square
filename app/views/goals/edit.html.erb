@@ -1,0 +1,71 @@
+<%= form_with(model: @goal, local: true, url: goal_path(@goal, type: params[:type])) do |form| %>
+  <% if @goal.is_a?(LongTermGoal) %>
+
+  <h2 class="row justify-content-center">目標編集ページ</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <%= form.label :long_goal, '長期的な目標', class: "form-label bold-label" %>
+          <%= form.text_field :long_goal, class: "form-control" %>
+        <div>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :long_goal_deadline, '締め切り', class: "form-label" %>
+        <%= form.date_field :long_goal_deadline, class: "form-control" %>
+      </div>
+    </div>  
+
+  <% else %>
+
+    <div class="mb-3">
+      <%= form.label :mid_goal, '中期的な目標', class: "form-label bold-label" %>
+      <%= form.text_field :mid_goal, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :what_to_do, '何をするのか', class: "form-label" %>
+      <%= form.text_field :what_to_do, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :why_to_do, 'なぜそれを行うのか', class: "form-label" %>
+      <%= form.text_field :why_to_do, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :current_status, '現状どうなのか', class: "form-label" %>
+      <%= form.text_field :current_status, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :why_current_status, 'なぜ現状そうなっているのか', class: "form-label" %>
+      <%= form.text_field :why_current_status, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :what_next, 'では何をするのか', class: "form-label" %>
+      <%= form.text_field :what_next, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :mid_goal_deadline, '締め切り', class: "form-label" %>
+      <%= form.number_field :priority, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :deadline %>
+      <%= form.date_field :mid_goal_deadline, class: "form-control" %>
+    </div>
+  <% end %>
+
+  <div class="row justify-content-center mb-3">
+    <div class="col-auto mt-5">
+      <div class="actions">
+        <%= form.submit "目標を更新" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'Back', goalindex_path %>

@@ -14,11 +14,10 @@ Rails.application.routes.draw do
   get '/goalset', to: 'goals#new'
   post '/goals', to: 'goals#create'
 
-  resources :goals do
-    resources :feedbacks, only: [:create, :destroy]
-  end
+  resources :goals, only: [:edit, :update, :destroy]
+  resources :feedbacks, only: [:create, :destroy]
 
-  get '/goalindex', to: 'goals#index'
+  get '/goalindex', to: 'goals#index', as: 'goalindex'
 
   resources :users 
   # only: [:show, :create]  
