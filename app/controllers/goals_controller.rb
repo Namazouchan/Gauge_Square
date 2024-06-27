@@ -1,4 +1,5 @@
 class GoalsController < ApplicationController
+    before_action :authenticate_user! # ログインしていない場合アクセスを制限
     before_action :set_goal, only: [:edit, :update]
 
     def index
@@ -12,7 +13,7 @@ class GoalsController < ApplicationController
     end
 
     def update
-      if @goal.update(goals_params)
+      if @goal.update(goal_params)
         redirect_to goals_path, notice: '目標が更新されました'
       else
         render :edit
