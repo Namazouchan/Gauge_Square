@@ -1,4 +1,4 @@
-// フィールドセットの追加機能
+
 const midGoalAdd = () => {
   const midGoalsContainer = document.getElementById("mid-goals");
   const midGoalFields = midGoalsContainer.querySelectorAll(".mid-goal-field");
@@ -68,6 +68,7 @@ const midGoalAdd = () => {
   }
 };
 
+
 // フィールドセットの削除機能
 const addRemoveEventListeners = () => {
   const removeButtons = document.querySelectorAll(".remove-mid-goal");
@@ -79,7 +80,7 @@ const addRemoveEventListeners = () => {
 };
 
 // 初期削除ボタンにイベントリスナーを追加
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   const addButton = document.getElementById("add-mid-term-goals");
   if (addButton) {
     addButton.addEventListener("click", midGoalAdd);
