@@ -1,0 +1,9 @@
+<%= form_with(model: @goal, local: true, url: feedbacks_path(@goal, type: params[:type])) do |form| %>
+  <h2 class="row justify-content-center">フィードバック入力ページ</h2>
+  <% if @goal.is_a?(LongTermGoal) %>
+    <div class="field">
+      <%= form.label :long_goal, '長期的な目標', class: "form-label bold-label" %>
+      <%= form.text_field :long_goal, class: "form-control" %>
+    </div>
+
+  <% end %>

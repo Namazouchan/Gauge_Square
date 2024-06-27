@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   post '/goals', to: 'goals#create'
 
   resources :goals, only: [:edit, :update, :destroy]
-  resources :feedbacks, only: [:create, :destroy]
+  resources :feedbacks, only: [:edit, :update]
 
   get '/goalindex', to: 'goals#index', as: 'goalindex'
 
