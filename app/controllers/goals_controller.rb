@@ -1,14 +1,14 @@
 class GoalsController < ApplicationController
     before_action :authenticate_user! # ログインしていない場合アクセスを制限
-    before_action :set_goal, only: [:edit, :update]
+    before_action :set_goal, only: [:edit, :update, :destroy]
 
     def index
       @long_term_goals = current_user.long_term_goals
       @mid_term_goals = current_user.mid_term_goals
 
-      Rails.logger.debug "Current User: #{@current_user.inspect}"
-      Rails.logger.debug "Long Term Goals: #{@long_term_goals.inspect}"
-      Rails.logger.debug "Mid Term Goals: #{@mid_term_goals.inspect}"
+      # Rails.logger.debug "Current User: #{@current_user.inspect}"
+      # Rails.logger.debug "Long Term Goals: #{@long_term_goals.inspect}"
+      # Rails.logger.debug "Mid Term Goals: #{@mid_term_goals.inspect}"
 
     end
 
@@ -24,6 +24,11 @@ class GoalsController < ApplicationController
     end
   
     def show
+    end
+
+    def destroy
+      @goal.destroy
+      redirect_to goal_path, notice: '目標は削除されました。'
     end
   
     def new
