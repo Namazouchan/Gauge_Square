@@ -2,6 +2,11 @@ class FeedbacksController < ApplicationController
   before_action :authenticate_user! 
   before_action :set_goal
 
+    def index
+      # @long_term_goals = current_user.long_term_goals
+      @mid_term_goals = current_user.mid_term_goals
+    end
+
     def edit
     end
 

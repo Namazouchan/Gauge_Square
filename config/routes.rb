@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :feedbacks, only: [:edit, :update]
 
   get '/goalindex', to: 'goals#index', as: 'goalindex'
+  get '/feedbackindex', to: 'feedbacks#index', as: 'feedbackindex'
 
   resources :users 
   # only: [:show, :create]  
