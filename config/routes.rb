@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   get '/goalindex', to: 'goals#index', as: 'goalindex'
   get '/feedbackindex', to: 'feedbacks#index', as: 'feedbackindex'
+  get '/feedbackshow', to: 'feedbacks#show', as: 'feedbackshow'
 
   resources :mid_term_goals do
     resources :feedbacks, only: [:index, :new, :create, :show]
