@@ -15,10 +15,14 @@ Rails.application.routes.draw do
   post '/goals', to: 'goals#create'
 
   resources :goals, only: [:edit, :update, :destroy]
-  resources :feedbacks, only: [:edit, :update]
+  resources :feedbacks, only: [:create]
 
   get '/goalindex', to: 'goals#index', as: 'goalindex'
   get '/feedbackindex', to: 'feedbacks#index', as: 'feedbackindex'
+
+  resources :mid_term_goals do
+    resources :feedbacks, only: [:index, :new, :create, :show]
+  end
 
   resources :users 
   # only: [:show, :create]  

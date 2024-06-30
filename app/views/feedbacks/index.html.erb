@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="container mt-5">
-    <h1 class="row justify-content-center">入力するフィードバック選択してね</h1>
+    <h1 class="row justify-content-center">フィードバックを入力する目標を選択してください。</h1>
     <div class="mb-5">
       <h3>中期的な目標</h3>
       <ul class="list-group">
@@ -20,7 +20,8 @@
             <strong>優先順位:</strong><%= goal.priority %><br>
             <strong>締め切り:</strong><%= goal.mid_goal_deadline.strftime("%Y/%m/%d") %><br>
             <strong>目標作成した日:</strong><%= goal.created_at.strftime("%Y/%m/%d") %><br>
-          <li>
+            <%= link_to 'フィードバックを入力する', new_mid_term_goal_feedback_path(goal) %>
+          </li>
         <% end %>
       </ul>
         <% else %>
