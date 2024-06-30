@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <div class="container mt-5">
-    <h1 class="row justify-content-center">過去に達成した目標</h1>
-    <div class="mb-5">
-      <% incomplete_goals = @mid_term_goals.select{ |goal| !goal.is_complete } %>
-      <% if !incomplete_goals.any? %>
-        <% incomplete_goals.each do |goal| %>
+<div class="container mt-5">
+  <h1 class="row justify-content-center">過去に達成した目標</h1>
+  <div class="mb-5">
+    <% complete_goals = @mid_term_goals.select { |goal| goal.is_complete } %>
+    <% if complete_goals.any? %>
+      <ul class="list-group">
+        <% complete_goals.each do |goal| %>
           <li class="list-group-item">
             <strong>中期的な目標:</strong> <%= goal.mid_goal %><br>
             <strong>何をするのか:</strong> <%= goal.what_to_do %><br>
@@ -20,7 +21,18 @@
             <strong>優先順位:</strong> <%= goal.priority %><br>
             <strong>締め切り:</strong> <%= goal.mid_goal_deadline.strftime("%Y/%m/%d") %><br>
             <strong>目標作成した日:</strong> <%= goal.created_at.strftime("%Y/%m/%d") %><br>
+            <strong>自己フィードバック:</strong><br>
+            <ul>
+              <% goal.feedbacks.each do |feedback| %>
+                <li><%= feedback.content %></li>
+              <% end %>
+            </ul>
           </li>
         <% end %>
-      <% end %>
+      </ul>
+        <% else %>
+          <p>達成された目標が見つかりませんでした。</p>
+        <% end %>
+  </div>
+</div>
 </body>

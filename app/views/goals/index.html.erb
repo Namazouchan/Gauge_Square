@@ -30,27 +30,28 @@
         
         <div>
             <h3>中期的な目標一覧</h3>
-            <% if @mid_term_goals.present? %>
             <ul class="list-group">
-                <% @mid_term_goals.each do |goal| %>
-                <li class="list-group-item">
-                    <strong>中期的な目標:</strong> <%= goal.mid_goal %><br>
-                    <strong>何をするのか:</strong> <%= goal.what_to_do %><br>
-                    <strong>なぜそれを行うのか:</strong> <%= goal.why_to_do %><br>
-                    <strong>現状どうなのか:</strong> <%= goal.current_status %><br>
-                    <strong>なぜ現状そうなっているのか:</strong> <%= goal.why_current_status %><br>
-                    <strong>では何をするのか:</strong> <%= goal.what_next %><br>
-                    <strong>優先順位:</strong> <%= goal.priority %><br>
-                    <strong>締め切り:</strong> <%= goal.mid_goal_deadline.try(:strftime, "%Y-%m-%d") || "締め切りが設定されていません" %><br>
-                    <strong>目標を作成した日:</strong> <%= goal.created_at.strftime("%Y/%m/%d") %><br>
-                    <%= link_to 'Edit', edit_goal_path(goal, type: 'mid_term') %>
-                    <%= link_to 'Delete', goal_path(goal, type: 'mid_term'), data: { turbo_method: :delete } %>
-                </li>
-                <% end %>
+                <% incomplete_goals = @mid_term_goals.select{ |goal| !goal.is_complete } %>
+                <% if incomplete_goals.any? %>
+                    <% incomplete_goals.each do |goal| %>
+                        <li class="list-group-item">
+                            <strong>中期的な目標:</strong> <%= goal.mid_goal %><br>
+                            <strong>何をするのか:</strong> <%= goal.what_to_do %><br>
+                            <strong>なぜそれを行うのか:</strong> <%= goal.why_to_do %><br>
+                            <strong>現状どうなのか:</strong> <%= goal.current_status %><br>
+                            <strong>なぜ現状そうなっているのか:</strong> <%= goal.why_current_status %><br>
+                            <strong>では何をするのか:</strong> <%= goal.what_next %><br>
+                            <strong>優先順位:</strong> <%= goal.priority %><br>
+                            <strong>締め切り:</strong> <%= goal.mid_goal_deadline.try(:strftime, "%Y-%m-%d") || "締め切りが設定されていません" %><br>
+                            <strong>目標を作成した日:</strong> <%= goal.created_at.strftime("%Y/%m/%d") %><br>
+                            <%= link_to 'Edit', edit_goal_path(goal, type: 'mid_term') %>
+                            <%= link_to 'Delete', goal_path(goal, type: 'mid_term'), data: { turbo_method: :delete } %>
+                        </li>
+                    <% end %>
             </ul>
-            <% else %>
-            <p>中期的な目標が見つかりませんでした。</p>
-            <% end %>
+                <% else %>
+                    <p>中期的な目標が見つかりませんでした。</p>
+                <% end %>
         </div>
     </div>
 

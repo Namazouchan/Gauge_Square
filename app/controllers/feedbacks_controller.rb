@@ -10,6 +10,12 @@ class FeedbacksController < ApplicationController
     def edit
     end
 
+    def show
+      @long_term_goals = current_user.long_term_goals
+      @mid_term_goals = current_user.mid_term_goals
+      @feedbacks = current_user.feedbacks
+    end
+
     def new
       @feedback = @goal.feedbacks.build
     end
