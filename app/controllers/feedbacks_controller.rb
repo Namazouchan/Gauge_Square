@@ -1,29 +1,51 @@
 class FeedbacksController < ApplicationController
-    before_action :set_goal
+  before_action :authenticate_user! 
+  before_action :set_goal
+
+    def index
+      @long_term_goals = current_user.long_term_goals
+      @mid_term_goals = current_user.mid_term_goals
+    end
+
+    def edit
+    end
+
+    def new
+      @feedback = @goal.feedbacks.build
+    end
+
+    def update
+      if @goal.update(feedback_params)
+        redirect_to feedbacks_path, notice: 'フィードバックが入力されました'
+      end
+    end
 
     def create
       @feedback = @goal.feedbacks.build(feedback_params)
-      @feedback.user = User.first # 本来はログインユーザーに変更すべき
-      if @feedback.save
-        redirect_to @goal, notice: 'フィードバックが追加されました。'
-      else
-        redirect_to @goal, alert: 'フィードバックの追加に失敗しました。'
-      end
-    end
+      @feedback.user = current_user
   
-    def destroy
-      @feedback = @goal.feedbacks.find(params[:id])
-      @feedback.destroy
-      redirect_to @goal, notice: 'フィードバックが削除されました。'
+      if @feedback.save
+        update_mid_goal_complete
+        redirect_to @goal, notice: 'フィードバックが正常に作成されました。'
+      else
+        render :new
+      end
     end
   
     private
   
     def set_goal
-      @goal = Goal.find(params[:goal_id])
+      params[:mid_term_goal_id]
+      @goal = MidTermGoal.find_by(id: params[:mid_term_goal_id])
     end
   
     def feedback_params
       params.require(:feedback).permit(:content)
+    end
+
+    def update_mid_goal_complete
+      if @goal.is_a?(MidTermGoal)
+        @goal.update(is_complete: true)
+      end
     end
 end
