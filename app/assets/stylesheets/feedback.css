@@ -1,0 +1,38 @@
+.goal-feedback {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #4CAF50; /* 緑色の背景 */
+  border: none;
+  color: white; /* 白色のテキスト */
+  padding: 15px 32px; /* 上下15px、左右32pxのパディング */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px; /* 角を丸くする */
+  transition: all 0.3s ease 0s; /* トランジション効果 */
+}
+
+.btn-primary:hover {
+  background-color: #45a049; /* ホバー時に少し暗い緑色に */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* 影をつける */
+  transform: scale(1.05); /* 少し大きくする */
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gauge Square</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_importmap_tags %>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="app-icon">
+      <%= link_to image_tag('gs_appicon.png', alt: 'App Icon'), '/home' %>
+    </div>
+    <div class="navigation-icons">
+      <%= link_to image_tag('icon_071510_256.png', alt: 'Nav 1'), '/goalset' %>
+      <%= link_to image_tag('icon_003020_256.png', alt: 'Nav 2'), '/goalindex' %>
+      <%= link_to image_tag('icon_056340_256.png', alt: 'Nav 3'), '/feedbackindex' %>
+      <%= link_to image_tag('icon_069430_256.png', alt: 'Nav 4'), '/feedbackshow' %>
+    </div>
+
+    <div class="logged-in-button">
+      <% if logged_in? %>
+        <%= link_to "UsersPage", '#' %>
+        <li class="divider"></li>
+        <%= link_to t("Logout"), logout_path, data: { turbo_method: :delete } %>
+      <% else %>
+        <%= link_to "Login" , login_path %>
+      <% end %>
+    </div>  
+  </div>
+
+
+  <div class="main-content">
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
+
+    <% if flash[:danger] %>
+      <div class="alert alert-danger"><%= flash[:danger] %></div>
+    <% end %>
+
+    <%= yield %>
+    
+    <%= debug(params) if Rails.env.development? %>
+  </div>
+</body>
+</html>

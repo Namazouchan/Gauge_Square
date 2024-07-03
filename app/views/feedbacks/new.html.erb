@@ -1,0 +1,15 @@
+<%= form_with(model: [@goal, @feedback], local: true) do |form| %>
+  <h2 class="row justify-content-center">フィードバック入力ページ</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <%= form.label :content, '選択した目標のフィードバックを入力してください。', class: "form-label bold-label" %>
+      <%= form.text_field :content, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-auto">
+      <%= form.submit '登録', class: "btn btn-success" %>
+    </div>
+  </div>
+<% end %>

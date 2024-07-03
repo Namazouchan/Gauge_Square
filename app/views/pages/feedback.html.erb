@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>自己評価ページ</title>
+  <%= stylesheet_link_tag 'feedback' %>
+</head>
+<body>
+    <h1>自己評価ページ</h1>
+    <div class="goal-feedback">
+        <h2>目標: サンプル目標</h2>
+        <p>期日: 2024/01/01〜2024/03/30</p>
+        <form action="/submit-feedback" method="POST">
+            <div class="form-group">
+                <label for="feedback">自己フィードバック</label>
+                <textarea id="feedback" name="feedback" rows="4" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">登録</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

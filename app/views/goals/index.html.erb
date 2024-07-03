@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>目標確認ページ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="row justify-content-center">目標一覧ページ</h1>
+        
+        <div class="mb-5">
+            <h3>長期的な目標一覧</h3>
+            <% if @long_term_goals.present? %>
+            <ul class="list-group">
+                <% @long_term_goals.each do |goal| %>
+                <li class="list-group-item">
+                    <strong>長期的な目標:</strong> <%= goal.long_goal %><br>
+                    <strong>締め切り:</strong> <%= goal.long_goal_deadline.strftime("%Y/%m/%d") %><br>
+                    <strong>目標作成した日:</strong> <%= goal.created_at.strftime("%Y/%m/%d") %><br>
+                    <%= link_to 'Edit', edit_goal_path(goal, type: 'long_term') %>
+                    <%= link_to 'Delete', goal_path(goal, type: 'long_term'), data: { turbo_method: :delete } %>
+                </li>
+                <% end %>
+            </ul>
+            <% else %>
+            <p>長期的な目標が見つかりませんでした。</p>
+            <% end %>
+        </div>
+        
+        <div>
+            <h3>中期的な目標一覧</h3>
+            <ul class="list-group">
+                <% incomplete_goals = @mid_term_goals.select{ |goal| !goal.is_complete } %>
+                <% if incomplete_goals.any? %>
+                    <% incomplete_goals.each do |goal| %>
+                        <li class="list-group-item">
+                            <strong>中期的な目標:</strong> <%= goal.mid_goal %><br>
+                            <strong>何をするのか:</strong> <%= goal.what_to_do %><br>
+                            <strong>なぜそれを行うのか:</strong> <%= goal.why_to_do %><br>
+                            <strong>現状どうなのか:</strong> <%= goal.current_status %><br>
+                            <strong>なぜ現状そうなっているのか:</strong> <%= goal.why_current_status %><br>
+                            <strong>では何をするのか:</strong> <%= goal.what_next %><br>
+                            <strong>優先順位:</strong> <%= goal.priority %><br>
+                            <strong>締め切り:</strong> <%= goal.mid_goal_deadline.try(:strftime, "%Y-%m-%d") || "締め切りが設定されていません" %><br>
+                            <strong>目標を作成した日:</strong> <%= goal.created_at.strftime("%Y/%m/%d") %><br>
+                            <%= link_to 'Edit', edit_goal_path(goal, type: 'mid_term') %>
+                            <%= link_to 'Delete', goal_path(goal, type: 'mid_term'), data: { turbo_method: :delete } %>
+                        </li>
+                    <% end %>
+            </ul>
+                <% else %>
+                    <p>中期的な目標が見つかりませんでした。</p>
+                <% end %>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

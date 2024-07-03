@@ -1,0 +1,31 @@
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h4 class="alert-heading"><%= pluralize(@user.errors.count, "つ  エラー") %> が発生しました。以下の内容をご確認ください。</h4>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h1 class="row justify-content-center">Sign up</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <%= form.label :username, class: "form-label" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :password, class: "form-label" %>
+        <%= form.password_field :password, class: "form-control" %>
+      </div>
+
+      <div class="d-grid gap-2">
+        <%= form.submit "Sign Up", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+

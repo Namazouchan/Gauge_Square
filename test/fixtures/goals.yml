@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  long_term_goal: MyString
+  mid_term_goal: MyString
+  what_to_do: MyText
+  why_to_do: MyText
+  current_status: MyText
+  why_current_status: MyText
+  what_next: MyText
+  priority: 1
+  deadline: 2024-05-08 12:37:38
+
+two:
+  user: two
+  long_term_goal: MyString
+  mid_term_goal: MyString
+  what_to_do: MyText
+  why_to_do: MyText
+  current_status: MyText
+  why_current_status: MyText
+  what_next: MyText
+  priority: 1
+  deadline: 2024-05-08 12:37:38

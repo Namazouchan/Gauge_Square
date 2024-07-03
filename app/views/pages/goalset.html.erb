@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>目標設定ページ</title>
+<%= stylesheet_link_tag 'goalset' %>
+<%= javascript_include_tag 'goalset' %>
+</head>
+<body>
+<h1>目標設定ページ</h1>
+<div class="goal-setting-container">
+  <h2>長期的な目標</h2>
+    <div id="long-term-goal-area">
+      <div class="long-term-goal-entry">
+        <textarea name="long_term_goal" placeholder="長期的な目標を入力"></textarea>
+      </div>
+    </div>
+  <h2>中期的な目標</h2>
+    <div id="mid-term-goal-area">
+      <div class="mid-term-goal-entry">
+        <textarea name="mid_term_goals[]" placeholder="中期的な目標を入力"></textarea>
+        <textarea name="mid_term_actions[]" placeholder="何をするのか"></textarea>
+        <textarea name="mid_term_reasons[]" placeholder="なぜそれを行うのか"></textarea>
+        <textarea name="mid_term_status[]" placeholder="現状どうなのか"></textarea>
+        <textarea name="mid_term_explanations[]" placeholder="なぜそうなるのか"></textarea>
+        <textarea name="mid_term_next_steps[]" placeholder="ではなにをするのか"></textarea>
+        <select name="mid_term_priority[]">
+          <option value="high">高</option>
+          <option value="medium">中</option>
+          <option value="low">低</option>
+        </select>
+        <input type="date" name="mid_term_due_date[]">
+        <button onclick="addMidTermGoalEntry()">+</button>
+        <button onclick="removeMidTermGoalEntry(this)">-</button>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+    <button class="goalbutton">登録する</button>
+  </div>
+</body> 
+</html>

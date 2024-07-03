@@ -1,0 +1,79 @@
+@import "bootstrap";
+
+
+.sidebar {
+  width: 100px; /* サイドバーの幅 */
+  margin-left: 10px;
+  position: fixed; /* 画面をスクロールしても固定 */
+  height: 100%; /* 画面全体の高さ */
+  background-color: #F5F5F5; /* サイドバーの背景色 */
+  border: 1px solid #ADADAD;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  color: white; /* テキスト色 */
+  padding: 20px; /* 内側の余白 */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* サイドバー内の要素を中央に揃える */
+}
+
+.app-icon img {
+  width: 90%; /* アイコンのサイズ調整 */
+  border-radius: 50%; /* アイコンを円形に */
+  margin-bottom: 50px; /* 下の要素との間隔 */
+}
+
+.navigation-icons a {
+  display: block; /* ブロック要素として表示 */
+  margin-bottom: 45px; /* アイコン間の間隔 */
+  text-align: center; /* 中央寄せ */
+}
+
+.navigation-icons img {
+  width: 50px; /* ナビゲーションアイコンのサイズ */
+  height: auto; /* アスペクト比を保持 */
+}
+
+.main-content {
+  margin-left: 160px; /* サイドバーの幅 + 内側の余白 (100px + 60px) */
+  padding: 20px; /* コンテンツエリアの余白 */
+  background-color: #F5F5F5; /* メインコンテンツの背景色 */
+  border: 1px solid #ADADAD; /* 境界線の色と太さ */
+  border-radius: 10px; /* 枠の角を丸くする */
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* 影をつける (オプショナル) */
+  width: calc(100% - 180px); /* 全体の幅からサイドバーの幅、余白、および増やしたマージンを引いた幅 */
+  height: auto; /* 高さは内容に応じて自動調整 */
+  position: relative; /* 相対的な位置 */
+  overflow: auto; /* 内容がはみ出た場合はスクロールバーを表示 */
+}
+
+.logged-in-button {
+  font-size: 13px;
+  text-align: center;
+}
+
+.logged-in-button a {
+  color: #007bff; /* フォントの色 */
+  text-decoration: none; /* 下線を消す */
+  font-weight: bold; /* フォントの太さ */
+  margin-bottom: 10px; /* 下に余白を追加 */
+  display: block; /* 各リンクをブロック要素として表示 */
+  text-align: center; /* 中央揃え */
+}
+
+.logged-in-button a:hover {
+  color: #0056b3; /* ホバー時の色 */
+  text-decoration: underline; /* ホバー時に下線を追加 */
+}
+
+.logged-in-button .divider {
+  border-top: 1px solid #ddd; /* 区切り線の色とスタイル */
+}
+
+.bold-label {
+  font-weight: bold;
+}
+
+body {
+  background-color: #DADADA
+}
