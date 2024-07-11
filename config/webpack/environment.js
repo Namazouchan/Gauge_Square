@@ -1,9 +1,12 @@
 const { environment } = require('@rails/webpacker')
+const commonConfig = require('./common');
 
 module.exports = (env) => {
   const envConfig = require(`./${env}`);
   return merge(commonConfig, envConfig, {
-    entry: './app/javasctipt/controllers/goals.js', // エントリーポイントを共通設定に追加
+    entry: {
+      main: './app/javascript/controllers/goals.js' // オブジェクト形式でエントリーポイントを指定
+    },
   });
 };
 
