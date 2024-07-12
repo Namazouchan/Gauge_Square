@@ -1,5 +1,4 @@
 const { environment } = require('@rails/webpacker')
-const commonConfig = require('./common');
 
 module.exports = (env) => {
   const envConfig = require(`./${env}`);
