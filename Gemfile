@@ -9,7 +9,24 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+  group :development, :test do
+    gem 'sqlite3', '~> 1.4'
+    # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+    gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  end
+    
+  
+  group :test do
+    # Adds support for Capybara system testing and selenium driver
+    gem 'capybara', '>= 3.26'
+    gem 'selenium-webdriver'
+    # Easy installation and use of web drivers to run system tests with browsers
+    gem 'webdrivers'
+  end
+  
+  group :production do
+    gem "pg", "~> 1.4"
+  end
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -60,16 +77,17 @@ group :development do
   # gem "spring"
 end
 
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-end
+# group :test do
+#   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+#   gem "capybara"
+#   gem "selenium-webdriver"
+# end
 
-gem "webpacker", "~> 5.4"
 
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap', '~> 5.0'
 
 gem 'sassc-rails', '>= 2.1.0'
+
+gem 'mini_racer'

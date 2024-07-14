@@ -1,17 +1,9 @@
 class PagesController < ApplicationController
-  def home
-  end
-
-  def complete
-  end
-
-  def feedback
-  end
-
-  def goalset
-  end
+  # def home
+  #   @long_term_goals = LongTermGoal
+  #   @mid_term_goals = MidTermGoal
+  #   @recent_feedbacks = Feedback.order(created_at: :desc).limit(5)
+  # end
   
-  def progress
-  end
   
 end
