@@ -22,7 +22,7 @@ class FeedbacksController < ApplicationController
 
     def update
       if @goal.update(feedback_params)
-        redirect_to feedbacks_path, notice: 'フィードバックが入力されました'
+        redirect_to feedbackindex_path, notice: 'フィードバックが入力されました'
       end
     end
 
@@ -32,7 +32,7 @@ class FeedbacksController < ApplicationController
   
       if @feedback.save
         update_mid_goal_complete
-        redirect_to @goal, notice: 'フィードバックが正常に作成されました。'
+        redirect_to feedbackindex_path, notice: 'フィードバックが正常に作成されました。'
       else
         render :new
       end
