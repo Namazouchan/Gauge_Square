@@ -14,7 +14,7 @@ class GoalsController < ApplicationController
 
     def update
       if @goal.update(goal_params)
-        redirect_to goals_path, notice: '目標が更新されました'
+        redirect_to goalindex_path, notice: '目標が更新されました'
       else
         render :edit
       end
