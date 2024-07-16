@@ -2,7 +2,13 @@
 # exit on error
 set -o errexit
 
+echo "Installing dependencies"
 bundle install
-bundle exec rake assets:precompile
+
+echo "Precompiling assets"
+RAILS_ENV=production bundle exec rake assets:precompile
+
 bundle exec rake assets:clean
-bundle exec rake db:migrate
+
+echo "Running database migrations"
+RAILS_ENV=production bundle exec rake db:migrate
