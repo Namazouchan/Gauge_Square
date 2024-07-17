@@ -90,4 +90,4 @@ gem 'bootstrap', '~> 5.0'
 
 gem 'sassc-rails', '>= 2.1.0'
 
-gem 'mini_racer'
+gem 'mini_racer', platforms: [:ruby]
