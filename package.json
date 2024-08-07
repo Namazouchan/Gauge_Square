@@ -2,6 +2,7 @@
   "dependencies": {
     "@rails/webpacker": "5.4.4",
     "bootstrap": "3.4.1",
+    "chart.js": "^4.4.3",
     "jquery": "3.4.1",
     "webpack": "4.46.0",
     "webpack-cli": "3.3.12"
@@ -9,5 +10,5 @@
   "devDependencies": {
     "webpack-dev-server": "3"
   },
-    "license": "UNLICENSED"
+  "license": "UNLICENSED"
 }
