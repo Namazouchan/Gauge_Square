@@ -5,11 +5,9 @@ class GoalsController < ApplicationController
     def index
       @long_term_goals = current_user.long_term_goals
       @mid_term_goals = current_user.mid_term_goals
-
-      # Rails.logger.debug "Current User: #{@current_user.inspect}"
-      # Rails.logger.debug "Long Term Goals: #{@long_term_goals.inspect}"
-      # Rails.logger.debug "Mid Term Goals: #{@mid_term_goals.inspect}"
-
+      @goals_data = MidTermGoal.where(is_complete: true)
+                               .group_by_month(:created_at, format: "%Y年%m月")
+                               .count
     end
 
     def update
