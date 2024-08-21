@@ -1,7 +1,7 @@
 # Gauge_Square
 
 ### 使用技術一覧
-<img src="https://img.shields.io/badge/-Ruby%20on%20Rails-CC0000.svg?logo=rails&style=for-the-badge"> <img src="https://img.shields.io/badge/-Ruby-CC0000.svg?logo=rails&style=for-the-badge"> <img src="https://img.shields.io/badge/-HTML-ee7800.svg?logo=rails&style=for-the-badge"> <img src="https://img.shields.io/badge/-JavaScript-ffff00.svg?logo=rails&style=for-the-badge"> <img src="https://img.shields.io/badge/-CSS-0000ff.svg?logo=rails&style=for-the-badge"> <img src="https://img.shields.io/badge/-SCSS-f5b2b2.svg?logo=rails&style=for-the-badge">
+<img src="https://img.shields.io/badge/-Ruby-CC342D.svg?logo=ruby&style=plastic"> <img src="https://img.shields.io/badge/-Ruby%20on%20Rails-CC0000.svg?logo=rails&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Postgresql-336791.svg?logo=postgresql&style=plastic"> <img src="https://img.shields.io/badge/-Render-000000.svg?logo=&style=plastic">
 
 ### サービスコンセプト
 掲げている夢や希望を実現する手助け!!エンゲージメント向上!!が出来るアプリ
