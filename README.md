@@ -1,5 +1,8 @@
 # Gauge_Square
 
+### 使用技術一覧
+<img src="https://img.shields.io/badge/-Ruby%20on%20Rails-CC0000.svg?logo=rails&style=for-the-badge">
+
 ### サービスコンセプト
 掲げている夢や希望を実現する手助け!!エンゲージメント向上!!が出来るアプリ
 
