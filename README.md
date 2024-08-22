@@ -1,4 +1,5 @@
 # Gauge_Square
+![Readme画像①](https://github.com/user-attachments/assets/8c4edf3b-dc8f-4595-8b02-d828cb8bc06f)
 
 ### 使用技術
 <img src="https://img.shields.io/badge/-Ruby-CC342D.svg?logo=ruby&style=plastic"> <img src="https://img.shields.io/badge/-Ruby%20on%20Rails-CC0000.svg?logo=rails&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Postgresql-336791.svg?logo=postgresql&style=plastic"> <img src="https://img.shields.io/badge/-Render-000000.svg?logo=&style=plastic">
