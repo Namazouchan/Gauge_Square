@@ -1,9 +1,6 @@
 # Gauge_Square
 ![Readme画像①](https://github.com/user-attachments/assets/bbb69363-b5b6-4ca9-ad6e-19b1f8f03013)
 
-## 使用技術
-<img src="https://img.shields.io/badge/-Ruby-CC342D.svg?logo=ruby&style=plastic"> <img src="https://img.shields.io/badge/-Ruby%20on%20Rails-CC0000.svg?logo=rails&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Postgresql-336791.svg?logo=postgresql&style=plastic"> <img src="https://img.shields.io/badge/-Render-000000.svg?logo=&style=plastic">
-
 ## サービスコンセプト
 掲げている夢や希望を実現する手助け!!エンゲージメント向上!!が出来るアプリ
 
@@ -22,16 +19,13 @@
 当時私はエクセルや紙ベースで管理していた為、煩雑で管理する時間を業務時間外にしたりと、大変苦労した記憶があります。
 個人で目標を管理することが出来れば、各メンバーのエンゲージメントを高め 高い生産性と低い離職率を両立できると思っています。
 ### どうやって解決するのか？
-#### 各メンバーのエンゲージメントを高め 高い生産性と低い離職率を実現させる
+#### 各メンバーのエンゲージメントを高め 高い生産性と低い離職率を実現
 従業員が自分の仕事に情熱を持ち自己決定した目標に向かって仕事と向き合えることが出来るので、効率的にタスクをこなし、高い成果を出せる。  
 結果、職場の雰囲気が良くなり、協力的なチームワークが促進され良好な職場環境になり低い離職率を実現することが出来る。
-### ペルソナ 
-名前: 鈴木太郎
-年齢: 28歳
-職業: 営業職
-特徴: 積極的で目標を持っているが、自己評価や成長の確認が難しいと感じている。上司とのコミュニケーションは良好だが、自己管理や目標達成のサポートが欲しい。
-課題: 自分の理想の姿に近づいているか不安を感じており、目標設定や進捗確認を効果的に行いたいと考えている。  
+## ER図
 
+## 使用技術
+<img src="https://img.shields.io/badge/-Ruby-CC342D.svg?logo=ruby&style=plastic"> <img src="https://img.shields.io/badge/-Ruby%20on%20Rails-CC0000.svg?logo=rails&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Postgresql-336791.svg?logo=postgresql&style=plastic"> <img src="https://img.shields.io/badge/-Render-000000.svg?logo=&style=plastic">
 ## 機能要件
 ユーザ登録機能  
 目標設定機能  
