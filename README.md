@@ -22,6 +22,28 @@
 #### 各メンバーのエンゲージメントを高め 高い生産性と低い離職率を実現
 従業員が自分の仕事に情熱を持ち自己決定した目標に向かって仕事と向き合えることが出来るので、効率的にタスクをこなし、高い成果を出せる。  
 結果、職場の雰囲気が良くなり、協力的なチームワークが促進され良好な職場環境になり低い離職率を実現することが出来る。
+
+## 使用技術
+<img src="https://img.shields.io/badge/-Ruby-CC342D.svg?logo=ruby&style=plastic"> <img src="https://img.shields.io/badge/-Ruby%20on%20Rails-CC0000.svg?logo=rails&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Postgresql-336791.svg?logo=postgresql&style=plastic"> <img src="https://img.shields.io/badge/-Render-000000.svg?logo=&style=plastic">
+## 機能要件
+ユーザ登録機能  
+目標設定機能  
+長期的目標に対し、複数の中期目標を設定出来る。  
+自己フィードバック  
+達成した目標を確認出来る。  
+
+## こだわったところ
+直観的な操作でアプリを使用出来る  
+面倒なユーザー登録は必要項目を最小限にした  
+長期的な目標に対し、中期的な目標を複数掲げることが出来る点  
+
+## 今後の課題及び追加予定機能
+管理者権限をもったアカウントの作成
+上長からのフィードバック
+
+## 非機能要件 
+GitHubのmainブランチにマージしたら自動デプロイ  
+
 ## ER図
 
 ```mermaid
@@ -79,25 +101,3 @@ erDiagram
     USERS ||--o{ FEEDBACKS : provides
     LONG_TERM_GOALS ||--o{ FEEDBACKS : receives
     MID_TERM_GOALS ||--o{ FEEDBACKS : receives  
-
-
-## 使用技術
-<img src="https://img.shields.io/badge/-Ruby-CC342D.svg?logo=ruby&style=plastic"> <img src="https://img.shields.io/badge/-Ruby%20on%20Rails-CC0000.svg?logo=rails&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Postgresql-336791.svg?logo=postgresql&style=plastic"> <img src="https://img.shields.io/badge/-Render-000000.svg?logo=&style=plastic">
-## 機能要件
-ユーザ登録機能  
-目標設定機能  
-長期的目標に対し、複数の中期目標を設定出来る。  
-自己フィードバック  
-達成した目標を確認出来る。  
-
-## こだわったところ
-直観的な操作でアプリを使用出来る  
-面倒なユーザー登録は必要項目を最小限にした  
-長期的な目標に対し、中期的な目標を複数掲げることが出来る点  
-
-## 今後の課題及び追加予定機能
-管理者権限をもったアカウントの作成
-上長からのフィードバック
-
-## 非機能要件 
-GitHubのmainブランチにマージしたら自動デプロイ  
