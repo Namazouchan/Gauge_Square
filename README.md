@@ -23,6 +23,60 @@
 従業員が自分の仕事に情熱を持ち自己決定した目標に向かって仕事と向き合えることが出来るので、効率的にタスクをこなし、高い成果を出せる。  
 結果、職場の雰囲気が良くなり、協力的なチームワークが促進され良好な職場環境になり低い離職率を実現することが出来る。
 ## ER図
+---
+title: "Gauge_Square"
+---
+erDiagram
+    USERS {
+        integer id PK
+        string name
+        string password_hash
+        datetime created_at
+        datetime updated_at
+    }
+
+    LONG_TERM_GOALS {
+        integer id PK
+        integer user_id FK
+        string long_goal
+        datetime deadline
+        boolean is_complete
+        datetime created_at
+        datetime updated_at
+    }
+    
+    MID_TERM_GOALS {
+        integer id PK
+        integer user_id FK
+        integer long_term_goal_id FK
+        string mid_goal
+        text what_to_do
+        text why_to_do
+        text current_status
+        text why_current_status
+        text what_next
+        integer priority
+        datetime deadline
+        boolean is_complete
+        datetime created_at
+        datetime updated_at
+    }
+
+    FEEDBACKS {
+        integer id PK
+        integer mid_term_goal_id FK
+        integer user_id FK
+        text content
+        datetime created_at
+        datetime updated_at
+    }
+
+    USERS ||--o{ LONG_TERM_GOALS : has
+    USERS ||--o{ MID_TERM_GOALS : has
+    LONG_TERM_GOALS ||--o{ MID_TERM_GOALS : includes
+    USERS ||--o{ FEEDBACKS : provides
+    LONG_TERM_GOALS ||--o{ FEEDBACKS : receives
+    MID_TERM_GOALS ||--o{ FEEDBACKS : receives
 
 ## 使用技術
 <img src="https://img.shields.io/badge/-Ruby-CC342D.svg?logo=ruby&style=plastic"> <img src="https://img.shields.io/badge/-Ruby%20on%20Rails-CC0000.svg?logo=rails&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Postgresql-336791.svg?logo=postgresql&style=plastic"> <img src="https://img.shields.io/badge/-Render-000000.svg?logo=&style=plastic">
