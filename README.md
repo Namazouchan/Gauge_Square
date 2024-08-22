@@ -23,6 +23,7 @@
 従業員が自分の仕事に情熱を持ち自己決定した目標に向かって仕事と向き合えることが出来るので、効率的にタスクをこなし、高い成果を出せる。  
 結果、職場の雰囲気が良くなり、協力的なチームワークが促進され良好な職場環境になり低い離職率を実現することが出来る。
 ## ER図
+
 ```mermaid
 ---
 title: "Gauge_Square"
@@ -77,7 +78,7 @@ erDiagram
     LONG_TERM_GOALS ||--o{ MID_TERM_GOALS : includes
     USERS ||--o{ FEEDBACKS : provides
     LONG_TERM_GOALS ||--o{ FEEDBACKS : receives
-    MID_TERM_GOALS ||--o{ FEEDBACKS : receives
+    MID_TERM_GOALS ||--o{ FEEDBACKS : receives  
 
 
 ## 使用技術
