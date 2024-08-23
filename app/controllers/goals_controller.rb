@@ -8,6 +8,7 @@ class GoalsController < ApplicationController
       @goals_data = MidTermGoal.where(is_complete: true)
                                .group_by_month(:created_at, format: "%Y年%m月")
                                .count
+      puts @goals_data.inspect
     end
 
     def update
