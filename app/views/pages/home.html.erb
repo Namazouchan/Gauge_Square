@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Main Page</title>
 <%= stylesheet_link_tag 'home' %>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="top-contents">
@@ -32,37 +33,37 @@
         </div>
     </div>
 
-    <div>
-        <canvas id="goalsChart"></canvas>
-    </div>
+    <canvas id="goalsChart"></canvas>
 
-    <div>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var ctx = document.getElementById('goalsChart').getContext('2d');
-                var goalsChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: <%= @goals_data.keys.to_json.html_safe %>,
-                    datasets: [{
-                    label: '目標達成数',
-                    data: <%= @goals_data.values.to_json.html_safe %>,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                    }
-                }
-                });
-            });
-        </script>
-     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        let ctx = document.getElementById('goalsChart').getContext('2d');
+        let goalsChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: <%= @goals_data.present? ? @goals_data.keys.to_json.html_safe : [].to_json.html_safe %>,  // ログインしている場合のみデータを使用
+            datasets: [{
+              label: '目標達成数',
+              data: <%= @goals_data.present? ? @goals_data.values.to_json.html_safe : [].to_json.html_safe %>, // ログインしている場合のみデータを使用
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      });
+    </script>
+    
+    <% unless current_user %>
+      <p>ログインしていません。目標の達成数を表示するにはログインしてください。</p>
+    <% end %>    
+    
 </body>
 </html>
