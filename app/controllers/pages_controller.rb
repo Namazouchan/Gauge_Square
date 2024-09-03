@@ -1,9 +1,13 @@
 class PagesController < ApplicationController
-  # def home
-  #   @long_term_goals = LongTermGoal
-  #   @mid_term_goals = MidTermGoal
-  #   @recent_feedbacks = Feedback.order(created_at: :desc).limit(5)
-  # end
-  
+  def home
+    if current_user
+      @goals_data = MidTermGoal.where(user_id: current_user.id, is_complete: true)
+                              .group_by_month(:created_at, format: "%Y年%m月")
+                              .count
+    else
+      @goals_date = {}
+    end
+      puts "@goals_data: #{@goals_data.inspect}"
+  end
   
 end
