@@ -23,6 +23,14 @@
 従業員が自分の仕事に情熱を持ち自己決定した目標に向かって仕事と向き合えることが出来るので、効率的にタスクをこなし、高い成果を出せる。  
 結果、職場の雰囲気が良くなり、協力的なチームワークが促進され良好な職場環境になり低い離職率を実現することが出来る。
 
+## 機能一覧
+![2707F0E5-10E7-4DED-A480-57E6CE5E9B3C](https://github.com/user-attachments/assets/21e3cb50-4d0d-4fcb-834b-747dbc8d2a70)  
+![EBC917CB-5702-4C33-B950-450847A79C40](https://github.com/user-attachments/assets/e9aa552c-8f5d-4084-bc46-ea0f41e3d3bf)  
+![34FD163![AF7C50E4-DB0C-46F8-B0CA-3D6694130E5E](https://github.com/user-attachments/assets/7b89236d-3c34-4685-b449-46e659d2f7d9)
+3-D236-4CF1-8206-62F7652FEF0E](https://github.com/user-attachments/assets/d2d1c895-92e1-48e1-84f2-863d690fe5a8)
+![8650F74D-4BB6-4CD4-916F-38A26050F265](https://github.com/user-attachments/assets/30b2f6e4-3721-4c24-abf8-dce1898c4db1)  
+
+
 ## 機能要件
 ユーザ登録機能  
 目標設定機能  
