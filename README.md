@@ -26,17 +26,21 @@
 ## 機能一覧
 ### ログイン画面
 使いやすいデザインに仕上げたログイン画面です。ユーザー登録にはユーザ名とパスワードのみで登録することが可能です。  
+  
 ![2707F0E5-10E7-4DED-A480-57E6CE5E9B3C](https://github.com/user-attachments/assets/c9712d33-c289-46f1-a029-f3cf3d72d699)  
 ### 目標設定ページ
 ユーザーが長期および中期の目標を設定できるページです。目標には期限や優先度を設定し、具体的な行動計画を立てることが可能です。  
+  
 ![EBC917CB-5702-4C33-B950-450847A79C40](https://github.com/user-attachments/assets/e5bc4961-ae79-4844-b891-fa013c7c77d5)  
 ### フィードバック入力ページ
 各目標に対するフィードバックを入力できるページです。ユーザーは達成した目標や進行中の目標に対して、コメントを残すことができます。  
+  
 ![34FD1633-D236-4CF1-8206-62F7652FEF0E](https://github.com/user-attachments/assets/b7307f80-106f-40be-89d5-58ee5d036005)  
 
 ![AF7C50E4-DB0C-46F8-B0CA-3D6694130E5E](https://github.com/user-attachments/assets/2c1b1341-dfe5-449f-b039-031d4f679aa7)  
 ### 過去に達成した目標リスト
 ユーザーが過去に達成した目標の一覧を表示するページです。ここからユーザーは自分の成長と達成を振り返ることができます。  
+  
 ![8650F74D-4BB6-4CD4-916F-38A26050F265](https://github.com/user-attachments/assets/d2dd16e5-b6c9-4347-8e2f-c3e8009d5165)  
 
 
