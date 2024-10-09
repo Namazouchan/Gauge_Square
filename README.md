@@ -1,7 +1,7 @@
 # Gauge_Square
 ![Readme画像①](https://github.com/user-attachments/assets/bbb69363-b5b6-4ca9-ad6e-19b1f8f03013)
 
-## サービスコンセプト
+## テーマ
 掲げている夢や希望を実現する手助け!!エンゲージメント向上!!が出来るアプリ
 
 ### 誰のどんな課題を解決するのか？
