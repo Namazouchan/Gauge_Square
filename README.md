@@ -58,17 +58,23 @@
 ユーザーは完了した目標の一覧を確認し、詳細を閲覧できます。
 
 ## こだわったところ
-直観的な操作でアプリを使用出来る  
-面倒なユーザー登録は必要項目を最小限にした  
-長期的な目標に対し、中期的な目標を複数掲げることが出来る点  
-過去達成した目標数をグラフで見ることができる点  
+#### 直観的な操作でアプリを使用出来る  
+社員が忙しい仕事の合間でも入力操作ができるように、見た瞬間に使い方がわかるように設計しました
+#### 面倒なユーザー登録は必要項目を最小限にした  
+まずがアプリを触ってほしいという思いから、最小限の項目にしました
+#### 長期的な目標に対し、中期的な目標を複数掲げることが出来る点
+長期的な目標を深堀りすることが出来ると考えました。とても実装が難しい所でした。
+#### 過去達成した目標数をグラフで見ることができる点  
+長期的にアプリを使用するためのモチベーションアップに繋がればと思いグラフを作成しました
 
 ## 今後の課題及び追加予定機能
-管理者権限をもったアカウントの作成  
-上長からのフィードバック
+#### 管理者権限をもったアカウントの作成  
+管理者権限をもったアカウントは、全ユーザーの目標を確認することが出来れば、よりメンバーのエンゲージメントに注目することが出来ると思います
+#### 上長からのフィードバック機能
+自己フィードバックと、上長評価があれば今後より適切な目標を掲げることが出来ると思います
 
 ## 非機能要件 
-GitHubのmainブランチにマージしたら自動デプロイ  
+GitHubのmainブランチにマージすると、CI/CDパイプラインが自動でビルドを行い、本番環境に自動デプロイされます。
 
 ## 使用技術
 <img src="https://img.shields.io/badge/-Ruby-CC342D.svg?logo=ruby&style=plastic"> <img src="https://img.shields.io/badge/-Ruby%20on%20Rails-CC0000.svg?logo=rails&style=plastic"> <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic"> <img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic"> <img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic"> <img src="https://img.shields.io/badge/-Postgresql-336791.svg?logo=postgresql&style=plastic"> <img src="https://img.shields.io/badge/-Render-000000.svg?logo=&style=plastic">
