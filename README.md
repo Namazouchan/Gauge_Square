@@ -35,13 +35,14 @@
 ### フィードバック入力ページ
 各目標に対するフィードバックを入力できるページです。ユーザーは達成した目標や進行中の目標に対して、コメントを残すことができます。  
   
-![34FD1633-D236-4CF1-8206-62F7652FEF0E](https://github.com/user-attachments/assets/b7307f80-106f-40be-89d5-58ee5d036005)  
+![フィードバック選択画面](https://github.com/user-attachments/assets/28a3ebeb-7ac7-4799-80e9-64ec643b2b79)
+
 
 ![AF7C50E4-DB0C-46F8-B0CA-3D6694130E5E](https://github.com/user-attachments/assets/2c1b1341-dfe5-449f-b039-031d4f679aa7)  
 ### 過去に達成した目標リスト
 ユーザーが過去に達成した目標の一覧を表示するページです。ここからユーザーは自分の成長と達成を振り返ることができます。  
   
-![8650F74D-4BB6-4CD4-916F-38A26050F265](https://github.com/user-attachments/assets/d2dd16e5-b6c9-4347-8e2f-c3e8009d5165)  
+![completeリスト](https://github.com/user-attachments/assets/e3110071-7bd2-4277-bd82-0b162b0d1bed)
 
 
 ## 機能要件
